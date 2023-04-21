@@ -10,6 +10,12 @@
 		0969D2EC29F230C900AB4DD2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2EB29F230C900AB4DD2 /* Colors.xcassets */; };
 		0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */; };
 		0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2F029F2362E00AB4DD2 /* UIImage+.swift */; };
+		0969D2FC29F23AC200AB4DD2 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2F329F23AC100AB4DD2 /* Pretendard-ExtraBold.otf */; };
+		0969D2FE29F23AC200AB4DD2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2F529F23AC200AB4DD2 /* Pretendard-Bold.otf */; };
+		0969D30029F23AC200AB4DD2 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2F729F23AC200AB4DD2 /* Pretendard-SemiBold.otf */; };
+		0969D30329F23AC200AB4DD2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2FA29F23AC200AB4DD2 /* Pretendard-Medium.otf */; };
+		0969D30429F23AC200AB4DD2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2FB29F23AC200AB4DD2 /* Pretendard-Regular.otf */; };
+		0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D30529F23BA300AB4DD2 /* UIFont+.swift */; };
 		0988FC2F29E975AB0065906C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC2E29E975AB0065906C /* AppDelegate.swift */; };
 		0988FC3129E975AB0065906C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3029E975AB0065906C /* SceneDelegate.swift */; };
 		0988FC3329E975AB0065906C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3229E975AB0065906C /* ViewController.swift */; };
@@ -22,6 +28,12 @@
 		0969D2EB29F230C900AB4DD2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		0969D2F029F2362E00AB4DD2 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		0969D2F329F23AC100AB4DD2 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		0969D2F529F23AC200AB4DD2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		0969D2F729F23AC200AB4DD2 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		0969D2FA29F23AC200AB4DD2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		0969D2FB29F23AC200AB4DD2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		0969D30529F23BA300AB4DD2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		0988FC2B29E975AB0065906C /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0988FC2E29E975AB0065906C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0988FC3029E975AB0065906C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +83,7 @@
 			children = (
 				0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */,
 				0969D2F029F2362E00AB4DD2 /* UIImage+.swift */,
+				0969D30529F23BA300AB4DD2 /* UIFont+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -92,6 +105,7 @@
 		0969D2E729F2308F00AB4DD2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0969D2F229F23AB300AB4DD2 /* Fonts */,
 				0969D2EA29F230B600AB4DD2 /* Colors */,
 				0969D2ED29F230D000AB4DD2 /* Storyboard */,
 				0969D2E929F230B000AB4DD2 /* Assets */,
@@ -129,6 +143,18 @@
 				0988FC3929E975AB0065906C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0969D2F229F23AB300AB4DD2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0969D2F529F23AC200AB4DD2 /* Pretendard-Bold.otf */,
+				0969D2F329F23AC100AB4DD2 /* Pretendard-ExtraBold.otf */,
+				0969D2FA29F23AC200AB4DD2 /* Pretendard-Medium.otf */,
+				0969D2FB29F23AC200AB4DD2 /* Pretendard-Regular.otf */,
+				0969D2F729F23AC200AB4DD2 /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		0988FC2229E975AB0065906C = {
@@ -217,8 +243,13 @@
 			files = (
 				0988FC3B29E975AB0065906C /* LaunchScreen.storyboard in Resources */,
 				0969D2EC29F230C900AB4DD2 /* Colors.xcassets in Resources */,
+				0969D2FE29F23AC200AB4DD2 /* Pretendard-Bold.otf in Resources */,
+				0969D30429F23AC200AB4DD2 /* Pretendard-Regular.otf in Resources */,
+				0969D2FC29F23AC200AB4DD2 /* Pretendard-ExtraBold.otf in Resources */,
 				0988FC3829E975AB0065906C /* Assets.xcassets in Resources */,
+				0969D30029F23AC200AB4DD2 /* Pretendard-SemiBold.otf in Resources */,
 				0988FC3629E975AB0065906C /* Main.storyboard in Resources */,
+				0969D30329F23AC200AB4DD2 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +264,7 @@
 				0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */,
 				0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */,
 				0988FC2F29E975AB0065906C /* AppDelegate.swift in Sources */,
+				0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */,
 				0988FC3129E975AB0065906C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
