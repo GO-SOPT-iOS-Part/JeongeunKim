@@ -13,9 +13,7 @@ import Then
 class HorizontalStackView: UIView {
     
     // MARK: - Properties
-    
-    private var config = UIButton.Configuration.plain()
-    
+        
     // MARK: - UI Components
     
     private let findID = UIButton(configuration: .plain())
@@ -43,12 +41,13 @@ class HorizontalStackView: UIView {
 
 private extension HorizontalStackView {
     func setUI(viewType: LoginViewType) {
+    
         let arrayString = [findID, findPassword, makeNickName]
         arrayString.forEach {
-            $0.configuration?.title = I18N.Login.findAccount[arrayString.firstIndex(of: $0)!]
             $0.configuration?.baseForegroundColor = .tv_gay2
-            $0.titleLabel?.font = .Pretendard(.semiBold, size: 14)
+            $0.configuration?.attributedTitle = AttributedString(I18N.Login.findAccount[arrayString.firstIndex(of: $0)!], attributes: AttributeContainer([NSAttributedString.Key.font : UIFont.Pretendard(.semiBold, size: 14)]))
         }
+        
         makeNickName.do {
             $0.setUnderline()
         }
