@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
     private let loginButton = UIButton(configuration: .plain())
     private let findAccountView = LoginHorizontalStackView(type: .Find, font: .Pretendard(.semiBold, size: 14))
     private let makeAcountView = LoginHorizontalStackView(type: .Make, font: .Pretendard(.regular, size: 14))
-    
     private let idTextField = LoginTextField(type: .ID)
     private let passwordTextField = LoginTextField(type: .Password)
 
@@ -51,11 +50,11 @@ extension LoginViewController: Layout {
         }
         idTextField.do {
             $0.delegate = self
-            $0.addTarget(self, action: #selector(idTextFieldDidchange), for: .touchDown)
+            $0.addTarget(self, action: #selector(idTextFieldDidchange), for: .editingChanged)
         }
         passwordTextField.do {
             $0.delegate = self
-            $0.addTarget(self, action: #selector(passwordTextFieldDidchange), for: .touchDown)
+            $0.addTarget(self, action: #selector(passwordTextFieldDidchange), for: .editingChanged)
         }
     }
 
@@ -123,7 +122,7 @@ extension LoginViewController: Layout {
 }
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if idTextField.text?.isEmpty == true  && passwordTextField.text?.isEmpty == true {
+        if !idTextField.isEmpty == true  && passwordTextField.isEmpty == true {
             self.loginButton(isOn: false)
         } else {
             self.loginButton(isOn: true)
@@ -135,16 +134,18 @@ extension LoginViewController {
    
     @objc
     private func loginButtonTapped() {
-        Utils.push(navigationController: self.navigationController, viewController: LoginConfirmViewController(), animated: true)
+        let loginConfirmViewController = LoginConfirmViewController()
+        guard let text = idTextField.text else {return}
+        loginConfirmViewController.bind(text: text)
+        present(loginConfirmViewController, animated: true)
     }
+    
     @objc
     private func idTextFieldDidchange(_ textField: UITextField) {
-        print("tapped ")
         idTextField.valueChange()
     }
     @objc
     private func passwordTextFieldDidchange(_ textField: UITextField) {
-        print("tapped ")
         passwordTextField.valueChange()
     }
 }

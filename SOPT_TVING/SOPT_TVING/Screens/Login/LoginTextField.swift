@@ -27,6 +27,11 @@ class LoginTextField: UITextField {
         setLeftPadding(amount: 23)
     }
     
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+        let originalRect = super.clearButtonRect(forBounds: bounds)
+        return originalRect.offsetBy(dx: -8, dy: 0)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -41,7 +46,7 @@ extension LoginTextField {
         
         secureButton.do {
             $0.isHidden = true
-            $0.addTarget(self, action: #selector(secureButtonTapped), for: .touchUpInside)
+          //  $0.addTarget(self, action: #selector(secureButtonTapped), for: .touchUpInside)
         }
         
         secureButton.configurationUpdateHandler = { btn in
@@ -58,10 +63,12 @@ extension LoginTextField {
         
         switch type {
         case .ID:
-            self.placeholder = type.title
+            modifyClearButtonWithImage(clear: .icCancel, secure: nil)
+
+            placeholder = type.title
         case .Password:
-            rightView = secureButton
-            rightViewMode = .always
+            isSecureTextEntry = true
+            modifyClearButtonWithImage(clear: .icCancel, secure: .icEyeSlash)
             placeholder = type.title
         }
     }
@@ -79,10 +86,10 @@ extension LoginTextField {
         layer.borderWidth = 1
         layer.borderColor = UIColor.tv_gay1?.cgColor
     }
-    @objc
-    private func secureButtonTapped(sender: UIButton) {
-        print("ee")
-        isSecureTextEntry.toggle()
-        secureButton.isSelected.toggle()
-    }
+//    @objc
+//    private func secureButtonTapped(sender: UIButton) {
+//        print("ee")
+//        isSecureTextEntry.toggle()
+//        secureButton.isSelected.toggle()
+//    }
 }

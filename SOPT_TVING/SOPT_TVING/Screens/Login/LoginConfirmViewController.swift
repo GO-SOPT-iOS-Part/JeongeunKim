@@ -13,7 +13,6 @@ import Then
 class LoginConfirmViewController: UIViewController {
     
     // MARK: - Properties
-    
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     
     // MARK: - UI Components
@@ -64,5 +63,8 @@ extension LoginConfirmViewController: Layout {
             $0.directionalHorizontalEdges.equalTo(safeArea).inset(20)
             $0.height.equalTo(52)
         }
+    }
+    func bind(text: String) {
+        userLabel.text = text
     }
 }
