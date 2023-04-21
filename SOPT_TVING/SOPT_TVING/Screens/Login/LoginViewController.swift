@@ -43,6 +43,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: Layout {
     func setUI() {
+        view.backgroundColor = .black
         titleLabel.do {
             $0.text = I18N.Login.title
             $0.font = .Pretendard(.medium, size: 23)
@@ -122,21 +123,19 @@ extension LoginViewController: Layout {
 }
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if idTextField.text!.count > 0  && passwordTextField.text!.count > 0  {
-            print(idTextField.text?.count)
+        if idTextField.text?.isEmpty == true  && passwordTextField.text?.isEmpty == true {
             self.loginButton(isOn: false)
         } else {
-            print(idTextField.text?.count)
-
             self.loginButton(isOn: true)
             passwordTextField.secureButton.isHidden = false
         }
     }
 }
 extension LoginViewController {
+   
     @objc
     private func loginButtonTapped() {
-        print("tapped ")
+        Utils.push(navigationController: self.navigationController, viewController: LoginConfirmViewController(), animated: true)
     }
     @objc
     private func idTextFieldDidchange(_ textField: UITextField) {

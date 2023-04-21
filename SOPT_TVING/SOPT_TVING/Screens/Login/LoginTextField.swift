@@ -48,6 +48,7 @@ extension LoginTextField {
             switch btn.state {
             case .selected:
                 btn.configuration?.image = .icEye
+                btn.configuration?.background.backgroundColor = .clear
             case .normal:
                 btn.configuration?.image = .icEyeSlash
             default:
@@ -80,12 +81,8 @@ extension LoginTextField {
     }
     @objc
     private func secureButtonTapped(sender: UIButton) {
-//        if sender.isSelected {
-//            isSecureTextEntry = false
-//        }
-//        else {
-//            secureButton.i
-//            isSecureTextEntry = true
-//        }
+        print("ee")
+        isSecureTextEntry.toggle()
+        secureButton.isSelected.toggle()
     }
 }
