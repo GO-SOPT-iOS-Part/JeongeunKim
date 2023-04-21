@@ -33,12 +33,16 @@ class LoginConfirmViewController: UIViewController {
 
 extension LoginConfirmViewController: Layout {
     func setUI() {
+        view.backgroundColor = .black
+        
         logoImageView.do {
             $0.image = .tvLogo
         }
         userLabel.do {
             $0.font = .Pretendard(.bold, size: 23)
             $0.textColor = .tv_gay1
+            $0.numberOfLines = 0
+            $0.textAlignment = .center
         }
         goMainButton.do {
             $0.configuration?.background.backgroundColor = .tv_red
@@ -65,6 +69,6 @@ extension LoginConfirmViewController: Layout {
         }
     }
     func bind(text: String) {
-        userLabel.text = text
+        userLabel.text = "\(text)님\n반가워요!"
     }
 }

@@ -137,7 +137,8 @@ extension LoginViewController {
         let loginConfirmViewController = LoginConfirmViewController()
         guard let text = idTextField.text else {return}
         loginConfirmViewController.bind(text: text)
-        present(loginConfirmViewController, animated: true)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.pushViewController(loginConfirmViewController, animated: true)
     }
     
     @objc
