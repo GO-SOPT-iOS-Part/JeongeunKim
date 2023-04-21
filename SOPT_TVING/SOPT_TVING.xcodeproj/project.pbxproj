@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0969D2EC29F230C900AB4DD2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2EB29F230C900AB4DD2 /* Colors.xcassets */; };
 		0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */; };
+		0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2F029F2362E00AB4DD2 /* UIImage+.swift */; };
 		0988FC2F29E975AB0065906C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC2E29E975AB0065906C /* AppDelegate.swift */; };
 		0988FC3129E975AB0065906C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3029E975AB0065906C /* SceneDelegate.swift */; };
 		0988FC3329E975AB0065906C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3229E975AB0065906C /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0969D2EB29F230C900AB4DD2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		0969D2F029F2362E00AB4DD2 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		0988FC2B29E975AB0065906C /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0988FC2E29E975AB0065906C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0988FC3029E975AB0065906C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */,
+				0969D2F029F2362E00AB4DD2 /* UIImage+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				0988FC3329E975AB0065906C /* ViewController.swift in Sources */,
 				0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */,
+				0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */,
 				0988FC2F29E975AB0065906C /* AppDelegate.swift in Sources */,
 				0988FC3129E975AB0065906C /* SceneDelegate.swift in Sources */,
 			);
