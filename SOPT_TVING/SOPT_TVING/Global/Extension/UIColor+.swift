@@ -9,7 +9,7 @@ import UIKit
 
 extension UIColor {
     
-    ///red
+    /// red
 
     static let tv_red = UIColor(named: "tv_red")
     

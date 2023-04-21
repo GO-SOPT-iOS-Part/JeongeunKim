@@ -16,8 +16,9 @@
 		0969D30329F23AC200AB4DD2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2FA29F23AC200AB4DD2 /* Pretendard-Medium.otf */; };
 		0969D30429F23AC200AB4DD2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2FB29F23AC200AB4DD2 /* Pretendard-Regular.otf */; };
 		0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D30529F23BA300AB4DD2 /* UIFont+.swift */; };
-		0988FC2F29E975AB0065906C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC2E29E975AB0065906C /* AppDelegate.swift */; };
-		0988FC3129E975AB0065906C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3029E975AB0065906C /* SceneDelegate.swift */; };
+		0969D30929F23CCF00AB4DD2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0969D30829F23CCF00AB4DD2 /* .swiftlint.yml */; };
+		0969D30D29F23E3400AB4DD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D30B29F23E3400AB4DD2 /* AppDelegate.swift */; };
+		0969D30E29F23E3400AB4DD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D30C29F23E3400AB4DD2 /* SceneDelegate.swift */; };
 		0988FC3329E975AB0065906C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3229E975AB0065906C /* ViewController.swift */; };
 		0988FC3629E975AB0065906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3429E975AB0065906C /* Main.storyboard */; };
 		0988FC3829E975AB0065906C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3729E975AB0065906C /* Assets.xcassets */; };
@@ -34,9 +35,10 @@
 		0969D2FA29F23AC200AB4DD2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		0969D2FB29F23AC200AB4DD2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		0969D30529F23BA300AB4DD2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		0969D30829F23CCF00AB4DD2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0969D30B29F23E3400AB4DD2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0969D30C29F23E3400AB4DD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0988FC2B29E975AB0065906C /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0988FC2E29E975AB0065906C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0988FC3029E975AB0065906C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0988FC3229E975AB0065906C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0988FC3529E975AB0065906C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0988FC3729E975AB0065906C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,20 +64,10 @@
 				0969D2E729F2308F00AB4DD2 /* Resource */,
 				0969D2E629F2308500AB4DD2 /* Protocol */,
 				0969D2E529F2307600AB4DD2 /* Literals */,
+				0969D30A29F23E3400AB4DD2 /* Delegate */,
 				0969D2E429F2306D00AB4DD2 /* Extension */,
-				0969D2E329F2305900AB4DD2 /* Delegate */,
-				0988FC3029E975AB0065906C /* SceneDelegate.swift */,
-				0988FC2E29E975AB0065906C /* AppDelegate.swift */,
 			);
 			path = Global;
-			sourceTree = "<group>";
-		};
-		0969D2E329F2305900AB4DD2 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Delegate;
-			path = "딛ㅎㅁㅅㄷ";
 			sourceTree = "<group>";
 		};
 		0969D2E429F2306D00AB4DD2 /* Extension */ = {
@@ -157,9 +149,20 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		0969D30A29F23E3400AB4DD2 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0969D30B29F23E3400AB4DD2 /* AppDelegate.swift */,
+				0969D30C29F23E3400AB4DD2 /* SceneDelegate.swift */,
+			);
+			name = Delegate;
+			path = SOPT_TVING/Global/Delegate;
+			sourceTree = SOURCE_ROOT;
+		};
 		0988FC2229E975AB0065906C = {
 			isa = PBXGroup;
 			children = (
+				0969D30829F23CCF00AB4DD2 /* .swiftlint.yml */,
 				0988FC2D29E975AB0065906C /* SOPT_TVING */,
 				0988FC2C29E975AB0065906C /* Products */,
 			);
@@ -190,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0988FC3F29E975AB0065906C /* Build configuration list for PBXNativeTarget "SOPT_TVING" */;
 			buildPhases = (
+				0969D30729F23C3300AB4DD2 /* SwiftLint Script */,
 				0988FC2729E975AB0065906C /* Sources */,
 				0988FC2829E975AB0065906C /* Frameworks */,
 				0988FC2929E975AB0065906C /* Resources */,
@@ -241,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0969D30929F23CCF00AB4DD2 /* .swiftlint.yml in Resources */,
 				0988FC3B29E975AB0065906C /* LaunchScreen.storyboard in Resources */,
 				0969D2EC29F230C900AB4DD2 /* Colors.xcassets in Resources */,
 				0969D2FE29F23AC200AB4DD2 /* Pretendard-Bold.otf in Resources */,
@@ -255,6 +260,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0969D30729F23C3300AB4DD2 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n    swiftlint\nelse \n    echo \"[warning] SwiftLint not installed, download using `brew install swiftlint`\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0988FC2729E975AB0065906C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -263,9 +290,9 @@
 				0988FC3329E975AB0065906C /* ViewController.swift in Sources */,
 				0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */,
 				0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */,
-				0988FC2F29E975AB0065906C /* AppDelegate.swift in Sources */,
+				0969D30D29F23E3400AB4DD2 /* AppDelegate.swift in Sources */,
 				0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */,
-				0988FC3129E975AB0065906C /* SceneDelegate.swift in Sources */,
+				0969D30E29F23E3400AB4DD2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
