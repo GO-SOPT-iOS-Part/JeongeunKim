@@ -24,6 +24,7 @@ class HorizontalStackView: UIView {
     private let findAccount = UILabel()
     private let horizontolStackView = UIStackView()
     private let lineView = UIView()
+    private let button = UIButton()
     
     // MARK: - Life Cycle
     
@@ -44,11 +45,10 @@ private extension HorizontalStackView {
     func setUI(viewType: LoginViewType) {
         let arrayString = [findID, findPassword, makeNickName]
         arrayString.forEach {
-            $0.configuration?.title = I18N.Login.findAccount[$0 == findID ? 0 : 1]
+            $0.configuration?.title = I18N.Login.findAccount[arrayString.firstIndex(of: $0)!]
             $0.configuration?.baseForegroundColor = .tv_gay2
             $0.titleLabel?.font = .Pretendard(.semiBold, size: 14)
         }
-        
         makeNickName.do {
             $0.setUnderline()
         }

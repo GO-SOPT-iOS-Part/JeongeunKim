@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
     func setUnderline() {
-        guard let title = title(for: .normal) else { return }
+        guard let title = configuration?.title else { return }
         let attributedString = NSMutableAttributedString(string: title)
         attributedString.addAttribute(.underlineStyle,
                                       value: NSUnderlineStyle.single.rawValue,

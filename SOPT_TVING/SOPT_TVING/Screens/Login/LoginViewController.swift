@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setUI()
         setLayout()
     }
@@ -44,7 +45,7 @@ extension LoginViewController: Layout {
     }
     
     func setLayout() {
-        view.addSubviews(navigationView, titleLabel,findAccountView, makeAcountView)
+        view.addSubviews(navigationView, titleLabel, findAccountView, makeAcountView)
         
         navigationView.snp.makeConstraints {
             $0.top.equalTo(safeArea)
@@ -61,7 +62,7 @@ extension LoginViewController: Layout {
             $0.height.equalTo(60)
         }
         makeAcountView.snp.makeConstraints {
-            $0.top.equalTo(findAccountView.snp.bottom).offset(50)
+            $0.top.equalTo(findAccountView.snp.bottom)
             $0.directionalHorizontalEdges.equalTo(safeArea)
             $0.height.equalTo(60)
         }
