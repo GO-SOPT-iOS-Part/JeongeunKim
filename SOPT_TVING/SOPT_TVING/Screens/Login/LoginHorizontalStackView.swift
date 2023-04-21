@@ -26,9 +26,9 @@ class LoginHorizontalStackView: UIView {
     
     // MARK: - Life Cycle
     
-    init(type: LoginViewType) {
+    init(type: LoginViewType, font: UIFont) {
         super.init(frame: .zero)
-        setUI(type: type)
+        setUI(type: type, font: font)
         setLayout()
     }
     
@@ -40,12 +40,12 @@ class LoginHorizontalStackView: UIView {
 // MARK: - Methods
 
 private extension LoginHorizontalStackView {
-    func setUI(type: LoginViewType) {
+    func setUI(type: LoginViewType, font: UIFont) {
     
         let arrayString = [findID, findPassword, makeNickName]
         arrayString.forEach {
             $0.configuration?.baseForegroundColor = .tv_gay2
-            $0.configuration?.attributedTitle = AttributedString(I18N.Login.findAccount[arrayString.firstIndex(of: $0)!], attributes: AttributeContainer([NSAttributedString.Key.font: UIFont.Pretendard(.semiBold, size: 14)]))
+            $0.configuration?.attributedTitle = AttributedString(I18N.Login.findAccount[arrayString.firstIndex(of: $0)!], attributes: AttributeContainer([NSAttributedString.Key.font: font]))
         }
         makeNickName.do {
             $0.setUnderline()

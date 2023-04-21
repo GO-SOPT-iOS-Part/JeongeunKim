@@ -17,8 +17,8 @@ class LoginViewController: UIViewController {
     private let navigationView = CustomNavigationView(icon: .btnBefore)
     private let titleLabel = UILabel()
     private let loginButton = UIButton(configuration: .plain())
-    private let findAccountView = LoginHorizontalStackView(type: .Find)
-    private let makeAcountView = LoginHorizontalStackView(type: .Make)
+    private let findAccountView = LoginHorizontalStackView(type: .Find, font: .Pretendard(.semiBold, size: 14))
+    private let makeAcountView = LoginHorizontalStackView(type: .Make, font: .Pretendard(.regular, size: 14))
     
     private let idTextField = LoginTextField(type: .ID)
     private let passwordTextField = LoginTextField(type: .Password)
@@ -33,10 +33,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setUI()
         setLayout()
-        completeButton(isOn: false)
+        loginButton(isOn: false)
     }
 }
 
@@ -51,14 +50,11 @@ extension LoginViewController: Layout {
         }
         idTextField.do {
             $0.delegate = self
+            $0.addTarget(self, action: #selector(idTextFieldDidchange), for: .touchDown)
         }
         passwordTextField.do {
             $0.delegate = self
-        }
-        loginButton.do {
-            $0.configuration?.background.strokeWidth = 1
-            $0.configuration?.attributedTitle = AttributedString(I18N.Login.login, attributes: AttributeContainer([NSAttributedString.Key.font: UIFont.Pretendard(.semiBold, size: 14)]))
-            $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(passwordTextFieldDidchange), for: .touchDown)
         }
     }
 
@@ -101,7 +97,12 @@ extension LoginViewController: Layout {
         }
     }
     
-    func completeButton(isOn: Bool) {
+    func loginButton(isOn: Bool) {
+        loginButton.do {
+            $0.configuration?.background.strokeWidth = 1
+            $0.configuration?.attributedTitle = AttributedString(I18N.Login.login, attributes: AttributeContainer([NSAttributedString.Key.font: UIFont.Pretendard(.semiBold, size: 14)]))
+            $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        }
         switch isOn {
         case true:
             loginButton.do {
@@ -121,10 +122,14 @@ extension LoginViewController: Layout {
 }
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if idTextField.text?.isEmpty == true && passwordTextField.text?.isEmpty == true {
-            self.completeButton(isOn: false)
+        if idTextField.text!.count > 0  && passwordTextField.text!.count > 0  {
+            print(idTextField.text?.count)
+            self.loginButton(isOn: false)
         } else {
-            self.completeButton(isOn: true)
+            print(idTextField.text?.count)
+
+            self.loginButton(isOn: true)
+            passwordTextField.secureButton.isHidden = false
         }
     }
 }
@@ -132,5 +137,15 @@ extension LoginViewController {
     @objc
     private func loginButtonTapped() {
         print("tapped ")
+    }
+    @objc
+    private func idTextFieldDidchange(_ textField: UITextField) {
+        print("tapped ")
+        idTextField.valueChange()
+    }
+    @objc
+    private func passwordTextFieldDidchange(_ textField: UITextField) {
+        print("tapped ")
+        passwordTextField.valueChange()
     }
 }

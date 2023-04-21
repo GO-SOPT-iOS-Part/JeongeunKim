@@ -15,6 +15,7 @@ struct I18N {
         static let login = "로그인하기"
         static let idTextField = "아이디"
         static let passwordTextFiedl = "비밀번호"
+        static let goMain = "메인으로"
     }
 
 }

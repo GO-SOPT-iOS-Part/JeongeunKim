@@ -18,13 +18,13 @@ class LoginTextField: UITextField {
     
     // MARK: - UI Components
     
-    let secureIcon = UIButton(configuration: .plain())
+    let secureButton = UIButton(configuration: .plain())
     
     init(type: LoginType) {
         super.init(frame: .zero)
-//        let tapGestureRecognizser = UITapGestureRecognizer(target: self, action: #selector(textFieldTapped(tapGestureRecognizer:)))
-//        addGestureRecognizer(tapGestureRecognizser)
         setUI(type: type)
+        setPlaceholder(color: .tv_gay2!)
+        setLeftPadding(amount: 23)
     }
     
     required init?(coder: NSCoder) {
@@ -37,13 +37,14 @@ class LoginTextField: UITextField {
 extension LoginTextField {
     private func setUI(type: LoginType) {
         layer.cornerRadius = 3
-        setLeftPadding(amount: 23)
+        backgroundColor = .tv_gay4
         
-        secureIcon.do {
+        secureButton.do {
             $0.isHidden = true
+            $0.addTarget(self, action: #selector(secureButtonTapped), for: .touchUpInside)
         }
         
-        secureIcon.configurationUpdateHandler = { btn in
+        secureButton.configurationUpdateHandler = { btn in
             switch btn.state {
             case .selected:
                 btn.configuration?.image = .icEye
@@ -58,10 +59,14 @@ extension LoginTextField {
         case .ID:
             self.placeholder = type.title
         case .Password:
-            rightView = secureIcon
+            rightView = secureButton
             rightViewMode = .always
             placeholder = type.title
         }
+    }
+    func valueChange() {
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.tv_gay1?.cgColor
     }
 }
 
@@ -72,5 +77,15 @@ extension LoginTextField {
     private func textFieldTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         layer.borderWidth = 1
         layer.borderColor = UIColor.tv_gay1?.cgColor
+    }
+    @objc
+    private func secureButtonTapped(sender: UIButton) {
+//        if sender.isSelected {
+//            isSecureTextEntry = false
+//        }
+//        else {
+//            secureButton.i
+//            isSecureTextEntry = true
+//        }
     }
 }
