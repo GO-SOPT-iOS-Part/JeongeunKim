@@ -11,7 +11,13 @@ import SnapKit
 import Then
 
 class CustomNavigationView: UIView {
-    private let iconImage: UIImageView
+    
+    // MARK: - UI Components
+    
+    private let iconImage =  UIImageView()
+    
+    // MARK: - Life Cycle
+    
     init(icon: UIImage) {
         super.init(frame: .zero)
         setUI(icon: icon)
@@ -22,6 +28,8 @@ class CustomNavigationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - Methods
 
 extension CustomNavigationView {
     func setUI(icon: UIImage) {
