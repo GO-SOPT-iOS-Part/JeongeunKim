@@ -13,6 +13,8 @@ struct I18N {
         static let findAccountLabel = "아직 계정이 없으신가요?"
         static let findAccount = ["아이디 찾기", "비밀번호 찾기", "닉네임 만들러가기"]
         static let login = "로그인하기"
+        static let idTextField = "아이디"
+        static let passwordTextFiedl = "비밀번호"
     }
 
 }

@@ -26,9 +26,9 @@ class LoginHorizontalStackView: UIView {
     
     // MARK: - Life Cycle
     
-    init(viewType: LoginViewType) {
+    init(type: LoginViewType) {
         super.init(frame: .zero)
-        setUI(viewType: viewType)
+        setUI(type: type)
         setLayout()
     }
     
@@ -40,7 +40,7 @@ class LoginHorizontalStackView: UIView {
 // MARK: - Methods
 
 private extension LoginHorizontalStackView {
-    func setUI(viewType: LoginViewType) {
+    func setUI(type: LoginViewType) {
     
         let arrayString = [findID, findPassword, makeNickName]
         arrayString.forEach {
@@ -52,7 +52,7 @@ private extension LoginHorizontalStackView {
         }
         findAccount.do {
             $0.text = I18N.Login.findAccountLabel
-            $0.textColor = .tv_gay1
+            $0.textColor = .tv_gay3
             $0.font = .Pretendard(.semiBold, size: 14)
         }
         lineView.do {
@@ -64,7 +64,7 @@ private extension LoginHorizontalStackView {
             $0.distribution = .equalSpacing
         }
         
-        switch viewType {
+        switch type {
         case .Find:
             horizontolStackView.addArrangedSubviews(findID, lineView, findPassword)
         case .Make:
