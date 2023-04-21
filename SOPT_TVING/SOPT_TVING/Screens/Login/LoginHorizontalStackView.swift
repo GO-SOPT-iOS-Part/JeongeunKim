@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class HorizontalStackView: UIView {
+class LoginHorizontalStackView: UIView {
     
     // MARK: - Properties
         
@@ -39,15 +39,14 @@ class HorizontalStackView: UIView {
 
 // MARK: - Methods
 
-private extension HorizontalStackView {
+private extension LoginHorizontalStackView {
     func setUI(viewType: LoginViewType) {
     
         let arrayString = [findID, findPassword, makeNickName]
         arrayString.forEach {
             $0.configuration?.baseForegroundColor = .tv_gay2
-            $0.configuration?.attributedTitle = AttributedString(I18N.Login.findAccount[arrayString.firstIndex(of: $0)!], attributes: AttributeContainer([NSAttributedString.Key.font : UIFont.Pretendard(.semiBold, size: 14)]))
+            $0.configuration?.attributedTitle = AttributedString(I18N.Login.findAccount[arrayString.firstIndex(of: $0)!], attributes: AttributeContainer([NSAttributedString.Key.font: UIFont.Pretendard(.semiBold, size: 14)]))
         }
-        
         makeNickName.do {
             $0.setUnderline()
         }

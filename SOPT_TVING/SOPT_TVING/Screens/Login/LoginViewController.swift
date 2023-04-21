@@ -16,8 +16,9 @@ class LoginViewController: UIViewController {
     
     private let navigationView = CustomNavigationView(icon: .btnBefore)
     private let titleLabel = UILabel()
-    private let findAccountView = HorizontalStackView(viewType: .Find)
-    private let makeAcountView = HorizontalStackView(viewType: .Make)
+    private let loginButton = UIButton(configuration: .plain())
+    private let findAccountView = LoginHorizontalStackView(viewType: .Find)
+    private let makeAcountView = LoginHorizontalStackView(viewType: .Make)
     
     // MARK: - Properties
     
@@ -27,13 +28,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setUI()
         setLayout()
     }
 }
 
-// Methods
+// MARK: - Methods
 
 extension LoginViewController: Layout {
     func setUI() {
@@ -42,10 +42,17 @@ extension LoginViewController: Layout {
             $0.font = .Pretendard(.medium, size: 23)
             $0.textColor = .tv_gay1
         }
+        loginButton.do {
+            $0.configuration?.background.strokeColor = .tv_gay2 //border색 
+            $0.configuration?.background.strokeWidth = 1
+            $0.configuration?.baseForegroundColor = .tv_gay2 // 글자색
+//            $0.configuration?.background.backgroundColor = .tv_red // 배경
+            $0.configuration?.attributedTitle = AttributedString(I18N.Login.login, attributes: AttributeContainer([NSAttributedString.Key.font: UIFont.Pretendard(.semiBold, size: 14)]))
+        }
     }
     
     func setLayout() {
-        view.addSubviews(navigationView, titleLabel, findAccountView, makeAcountView)
+        view.addSubviews(navigationView, titleLabel, loginButton, findAccountView, makeAcountView)
         
         navigationView.snp.makeConstraints {
             $0.top.equalTo(safeArea)
@@ -56,8 +63,13 @@ extension LoginViewController: Layout {
             $0.top.equalTo(navigationView.snp.bottom)
             $0.centerX.equalTo(safeArea)
         }
-        findAccountView.snp.makeConstraints {
+        loginButton.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+            $0.directionalHorizontalEdges.equalTo(safeArea).inset(20)
+            $0.height.equalTo(52)
+        }
+        findAccountView.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(50)
             $0.directionalHorizontalEdges.equalTo(safeArea)
             $0.height.equalTo(60)
         }

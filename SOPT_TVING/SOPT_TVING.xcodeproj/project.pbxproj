@@ -27,7 +27,7 @@
 		0969D32029F2444D00AB4DD2 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D31F29F2444D00AB4DD2 /* UITextField+.swift */; };
 		0969D32229F2446000AB4DD2 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32129F2446000AB4DD2 /* UIStackView+.swift */; };
 		0969D32429F2447100AB4DD2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32329F2447100AB4DD2 /* UIView+.swift */; };
-		0969D32629F2495900AB4DD2 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32529F2495900AB4DD2 /* HorizontalStackView.swift */; };
+		0969D32629F2495900AB4DD2 /* LoginHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32529F2495900AB4DD2 /* LoginHorizontalStackView.swift */; };
 		0969D32929F2499000AB4DD2 /* LoginViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32829F2499000AB4DD2 /* LoginViewType.swift */; };
 		0969D32B29F24B6200AB4DD2 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32A29F24B6200AB4DD2 /* UIButton+.swift */; };
 		0988FC3329E975AB0065906C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3229E975AB0065906C /* LoginViewController.swift */; };
@@ -55,7 +55,7 @@
 		0969D31F29F2444D00AB4DD2 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		0969D32129F2446000AB4DD2 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		0969D32329F2447100AB4DD2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		0969D32529F2495900AB4DD2 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
+		0969D32529F2495900AB4DD2 /* LoginHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHorizontalStackView.swift; sourceTree = "<group>"; };
 		0969D32829F2499000AB4DD2 /* LoginViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewType.swift; sourceTree = "<group>"; };
 		0969D32A29F24B6200AB4DD2 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		0988FC2B29E975AB0065906C /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				0988FC3229E975AB0065906C /* LoginViewController.swift */,
-				0969D32529F2495900AB4DD2 /* HorizontalStackView.swift */,
+				0969D32529F2495900AB4DD2 /* LoginHorizontalStackView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 				0969D30D29F23E3400AB4DD2 /* AppDelegate.swift in Sources */,
 				0969D31A29F242D800AB4DD2 /* Layout.swift in Sources */,
 				0969D32229F2446000AB4DD2 /* UIStackView+.swift in Sources */,
-				0969D32629F2495900AB4DD2 /* HorizontalStackView.swift in Sources */,
+				0969D32629F2495900AB4DD2 /* LoginHorizontalStackView.swift in Sources */,
 				0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */,
 				0969D32929F2499000AB4DD2 /* LoginViewType.swift in Sources */,
 				0969D30E29F23E3400AB4DD2 /* SceneDelegate.swift in Sources */,
