@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     private let makeAcountView = LoginHorizontalStackView(type: .Make, font: .Pretendard(.regular, size: 14))
     private let idTextField = LoginTextField(type: .ID)
     private let passwordTextField = LoginTextField(type: .Password)
-
+    
     // MARK: - Properties
     
     private var iconClick = false
@@ -50,14 +50,12 @@ extension LoginViewController: Layout {
         }
         idTextField.do {
             $0.delegate = self
-            $0.addTarget(self, action: #selector(idTextFieldDidchange), for: .editingChanged)
         }
         passwordTextField.do {
             $0.delegate = self
-            $0.addTarget(self, action: #selector(passwordTextFieldDidchange), for: .editingChanged)
         }
     }
-
+    
     func setLayout() {
         view.addSubviews(navigationView, titleLabel, idTextField, passwordTextField, loginButton, findAccountView, makeAcountView)
         
@@ -121,17 +119,26 @@ extension LoginViewController: Layout {
     }
 }
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if !idTextField.isEmpty == true  && passwordTextField.isEmpty == true {
-            self.loginButton(isOn: false)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.becomeFirstResponder()
+        idTextField.valueChange()
+        passwordTextField.valueChange()
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if idTextField.hasText && passwordTextField.hasText {
+            loginButton(isOn: true)
         } else {
-            self.loginButton(isOn: true)
-            passwordTextField.secureButton.isHidden = false
+            loginButton(isOn: false)
         }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
     }
 }
 extension LoginViewController {
-   
+    
     @objc
     private func loginButtonTapped() {
         let loginConfirmViewController = LoginConfirmViewController()
@@ -143,10 +150,10 @@ extension LoginViewController {
     
     @objc
     private func idTextFieldDidchange(_ textField: UITextField) {
-        idTextField.valueChange()
+            idTextField.valueChange()
     }
     @objc
     private func passwordTextFieldDidchange(_ textField: UITextField) {
-        passwordTextField.valueChange()
+          passwordTextField.valueChange()
     }
 }

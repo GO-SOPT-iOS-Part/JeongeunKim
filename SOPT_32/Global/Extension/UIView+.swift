@@ -5,7 +5,7 @@
 //  Created by JEONGEUN KIM on 2023/04/06.
 //
 
-import UIKit
+import UIKit.UIView
 
 extension UIView {
     
@@ -13,7 +13,7 @@ extension UIView {
         views.forEach { self.addSubview($0) }
     }
     
-    func makeCornerRound (radius : CGFloat){
+    func makeRounded (radius : CGFloat){
         layer.cornerRadius = radius
         layer.masksToBounds = false
     }

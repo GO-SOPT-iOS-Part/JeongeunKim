@@ -63,12 +63,11 @@ extension LoginTextField {
         
         switch type {
         case .ID:
-            modifyClearButtonWithImage(clear: .icCancel, secure: nil)
-
+            addClearButton(clear: .icCancel, x: 25)
             placeholder = type.title
         case .Password:
             isSecureTextEntry = true
-            modifyClearButtonWithImage(clear: .icCancel, secure: .icEyeSlash)
+            addClearButton(clear: .icCancel, x: 0)
             placeholder = type.title
         }
     }

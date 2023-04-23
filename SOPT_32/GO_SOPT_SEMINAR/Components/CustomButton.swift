@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class CustomButton: UIView {
 
     // MARK: - UI Components
@@ -31,7 +34,7 @@ class CustomButton: UIView {
 extension CustomButton {
     func setUI(title: String, icon: String? ) {
         backgroundColor = .purple1
-        makeCornerRound(radius: 10)
+        makeRounded(radius: 10)
         
         button.setTitle(title, for: .normal)
         button.setTitleColor(.purple3, for: .normal)
