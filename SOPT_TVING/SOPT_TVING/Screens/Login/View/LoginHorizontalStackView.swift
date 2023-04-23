@@ -24,7 +24,7 @@ class LoginHorizontalStackView: UIView {
     private let lineView = UIView()
     private let button = UIButton()
     
-    // MARK: - Life Cycle
+    // MARK: - Initialization
     
     init(type: LoginViewType, font: UIFont) {
         super.init(frame: .zero)

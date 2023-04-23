@@ -5,7 +5,7 @@
 //  Created by JEONGEUN KIM on 2023/04/21.
 //
 
-import Foundation
+import UIKit
 
 enum LoginViewType {
     case Find, Make
@@ -19,6 +19,18 @@ enum LoginType {
             return I18N.Login.idTextField
         case .Password:
             return I18N.Login.passwordTextFiedl
+        }
+    }
+}
+enum SecureStatus {
+    case on, off
+    
+    var icon: UIImage? {
+        switch self {
+        case .on:
+            return .icEye
+        case .off:
+            return .icEyeSlash
         }
     }
 }

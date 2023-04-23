@@ -19,14 +19,12 @@ class LoginViewController: UIViewController {
     private let loginButton = UIButton(configuration: .plain())
     private let findAccountView = LoginHorizontalStackView(type: .Find, font: .Pretendard(.semiBold, size: 14))
     private let makeAcountView = LoginHorizontalStackView(type: .Make, font: .Pretendard(.regular, size: 14))
-    private let idTextField = LoginTextField(type: .ID)
-    private let passwordTextField = LoginTextField(type: .Password)
+    private let idTextField = LoginTextField(type: .ID, secure: .off)
+    private let passwordTextField = LoginTextField(type: .Password, secure: .on)
     
     // MARK: - Properties
     
-    private var iconClick = false
     private lazy var safeArea = self.view.safeAreaLayoutGuide
-    private var isOn = false
     
     // MARK: - Life Cycle
     
@@ -49,10 +47,24 @@ extension LoginViewController: Layout {
             $0.textColor = .tv_gay1
         }
         idTextField.do {
-            $0.delegate = self
+            $0.textField.delegate = self
+            $0.textField.addTarget(self, action: #selector(idTextFieldDidchange), for: .editingDidBegin)
         }
         passwordTextField.do {
-            $0.delegate = self
+            $0.textField.delegate = self
+            $0.textField.addTarget(self, action: #selector(passwordTextFieldDidchange), for: .editingDidBegin)
+        }
+    }
+    
+    func loginButton(isOn: Bool) {
+        loginButton.do {
+            $0.configuration?.background.strokeWidth = 1
+            $0.configuration?.attributedTitle = AttributedString(I18N.Login.login, attributes: AttributeContainer([NSAttributedString.Key.font: UIFont.Pretendard(.semiBold, size: 14)]))
+            $0.isUserInteractionEnabled = isOn ? true : false
+            $0.configuration?.background.backgroundColor = isOn ? .tv_red : .clear
+            $0.configuration?.background.strokeColor = isOn ? .clear : .tv_gay4
+            $0.configuration?.baseForegroundColor = isOn ? .white : .tv_gay2
+            $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         }
     }
     
@@ -94,66 +106,42 @@ extension LoginViewController: Layout {
             $0.height.equalTo(50)
         }
     }
-    
-    func loginButton(isOn: Bool) {
-        loginButton.do {
-            $0.configuration?.background.strokeWidth = 1
-            $0.configuration?.attributedTitle = AttributedString(I18N.Login.login, attributes: AttributeContainer([NSAttributedString.Key.font: UIFont.Pretendard(.semiBold, size: 14)]))
-            $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        }
-        switch isOn {
-        case true:
-            loginButton.do {
-                $0.isUserInteractionEnabled = true
-                $0.configuration?.background.backgroundColor = .tv_red
-                $0.configuration?.background.strokeColor = .clear
-                $0.configuration?.baseForegroundColor = .white}
-        case false:
-            loginButton.do {
-                $0.isUserInteractionEnabled = false
-                $0.configuration?.background.backgroundColor = .clear
-                $0.configuration?.background.strokeColor = .tv_gay4
-                $0.configuration?.baseForegroundColor = .tv_gay2
-            }
-        }
-    }
 }
+
+// MARK: - Delegate
+
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.becomeFirstResponder()
-        idTextField.valueChange()
-        passwordTextField.valueChange()
-    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if idTextField.hasText && passwordTextField.hasText {
+        if idTextField.textField.hasText && passwordTextField.textField.hasText {
             loginButton(isOn: true)
         } else {
             loginButton(isOn: false)
         }
         return true
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textField.resignFirstResponder()
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        idTextField.valueChange(status: false)
+        passwordTextField.valueChange(status: false)
     }
 }
+
+// MARK: - Action
+
 extension LoginViewController {
-    
     @objc
     private func loginButtonTapped() {
         let loginConfirmViewController = LoginConfirmViewController()
-        guard let text = idTextField.text else {return}
+        guard let text = idTextField.textField.text else {return}
         loginConfirmViewController.bind(text: text)
         navigationController?.isNavigationBarHidden = true
         navigationController?.pushViewController(loginConfirmViewController, animated: true)
     }
-    
     @objc
     private func idTextFieldDidchange(_ textField: UITextField) {
-            idTextField.valueChange()
+        idTextField.valueChange(status: true)
     }
     @objc
     private func passwordTextFieldDidchange(_ textField: UITextField) {
-          passwordTextField.valueChange()
+        passwordTextField.valueChange(status: true)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092B47D629F5971600D38FD7 /* SecureImage.swift */; };
 		0969D2EC29F230C900AB4DD2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2EB29F230C900AB4DD2 /* Colors.xcassets */; };
 		0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */; };
 		0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2F029F2362E00AB4DD2 /* UIImage+.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092B47D629F5971600D38FD7 /* SecureImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureImage.swift; sourceTree = "<group>"; };
 		0969D2EB29F230C900AB4DD2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		0969D2F029F2362E00AB4DD2 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -85,6 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092B47D829F5A11900D38FD7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0988FC3229E975AB0065906C /* LoginViewController.swift */,
+				0969D32E29F2993F00AB4DD2 /* LoginConfirmViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		092B47D929F5A11F00D38FD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0969D32C29F2719D00AB4DD2 /* LoginTextField.swift */,
+				0969D32529F2495900AB4DD2 /* LoginHorizontalStackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0969D2E229F2303E00AB4DD2 /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,10 +225,8 @@
 		0969D31629F240C900AB4DD2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0988FC3229E975AB0065906C /* LoginViewController.swift */,
-				0969D32529F2495900AB4DD2 /* LoginHorizontalStackView.swift */,
-				0969D32E29F2993F00AB4DD2 /* LoginConfirmViewController.swift */,
-				0969D32C29F2719D00AB4DD2 /* LoginTextField.swift */,
+				092B47D929F5A11F00D38FD7 /* View */,
+				092B47D829F5A11900D38FD7 /* ViewController */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -217,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				0969D31D29F243E500AB4DD2 /* CustomNavigationView.swift */,
+				092B47D629F5971600D38FD7 /* SecureImage.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -377,6 +396,7 @@
 			files = (
 				0969D32429F2447100AB4DD2 /* UIView+.swift in Sources */,
 				0969D33129F29C8700AB4DD2 /* Util.swift in Sources */,
+				092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */,
 				0969D32D29F2719D00AB4DD2 /* LoginTextField.swift in Sources */,
 				0988FC3329E975AB0065906C /* LoginViewController.swift in Sources */,
 				0969D32029F2444D00AB4DD2 /* UITextField+.swift in Sources */,

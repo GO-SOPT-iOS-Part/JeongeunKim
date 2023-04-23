@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+
 extension UITextField {
     func setLeftPadding(amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
@@ -44,21 +45,20 @@ extension UITextField {
         attributedPlaceholder = NSAttributedString(string: string, attributes: [.foregroundColor: color])
     }
     
-    func addClearButton(clear: UIImage, x: Int ) {
+    func addClearButton(clear: UIImage, x: Int) {
         let textFieldView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-        
+
         let clearButton = UIButton(type: .custom)
         clearButton.setImage(clear, for: .normal)
         clearButton.frame = CGRect(x: x, y: 5, width: 30, height: 30)
         clearButton.contentMode = .scaleAspectFit
         clearButton.addTarget(self, action: #selector(UITextField.clear(sender:) ), for: .touchUpInside)
-
+        
         textFieldView.addSubview(clearButton)
-
         self.rightView = textFieldView
         self.rightViewMode = .whileEditing
     }
-    
+
     @objc func clear(sender: AnyObject) {
         self.text = ""
         sendActions(for: .editingChanged)
