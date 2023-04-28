@@ -22,6 +22,9 @@ extension UIImage {
         UIImage(named: "Icon/eye")! }
     static var icCancel: UIImage {
         UIImage(named: "Icon/cancel")! }
+    static var icRightArrow: UIImage {
+        UIImage(named: "Icon/rightArrow")! }
+    }
     
     /// Button
 

@@ -11,6 +11,9 @@
 		094D843F29FBDCE0002A0BFF /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D843E29FBDCE0002A0BFF /* NSObject+.swift */; };
 		094D844129FBDCFD002A0BFF /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844029FBDCFD002A0BFF /* BaseView.swift */; };
 		094D844329FBDD57002A0BFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844229FBDD57002A0BFF /* BaseViewController.swift */; };
+		094D844629FBDDD8002A0BFF /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844529FBDDD8002A0BFF /* MyPageViewController.swift */; };
+		094D847229FBEBF4002A0BFF /* MypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D847129FBEBF4002A0BFF /* MypageModel.swift */; };
+		094D847429FBEC9A002A0BFF /* MypageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */; };
 		0969D2EC29F230C900AB4DD2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0969D2EB29F230C900AB4DD2 /* Colors.xcassets */; };
 		0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */; };
 		0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D2F029F2362E00AB4DD2 /* UIImage+.swift */; };
@@ -48,6 +51,9 @@
 		094D843E29FBDCE0002A0BFF /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		094D844029FBDCFD002A0BFF /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		094D844229FBDD57002A0BFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		094D844529FBDDD8002A0BFF /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		094D847129FBEBF4002A0BFF /* MypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
+		094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0969D2EB29F230C900AB4DD2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0969D2EE29F235EB00AB4DD2 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		0969D2F029F2362E00AB4DD2 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -109,6 +115,16 @@
 				0969D32529F2495900AB4DD2 /* LoginHorizontalStackView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		094D844429FBDDC5002A0BFF /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				094D844529FBDDD8002A0BFF /* MyPageViewController.swift */,
+				094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */,
+				094D847129FBEBF4002A0BFF /* MypageModel.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		0969D2E229F2303E00AB4DD2 /* Global */ = {
@@ -223,6 +239,7 @@
 		0969D31529F2409300AB4DD2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				094D844429FBDDC5002A0BFF /* MyPage */,
 				0969D31729F240DA00AB4DD2 /* Common */,
 				0969D31629F240C900AB4DD2 /* Login */,
 			);
@@ -406,16 +423,19 @@
 				0969D32429F2447100AB4DD2 /* UIView+.swift in Sources */,
 				0969D33129F29C8700AB4DD2 /* Util.swift in Sources */,
 				092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */,
+				094D847429FBEC9A002A0BFF /* MypageCollectionViewCell.swift in Sources */,
 				0969D32D29F2719D00AB4DD2 /* LoginTextField.swift in Sources */,
 				0988FC3329E975AB0065906C /* LoginViewController.swift in Sources */,
 				094D843F29FBDCE0002A0BFF /* NSObject+.swift in Sources */,
 				0969D32029F2444D00AB4DD2 /* UITextField+.swift in Sources */,
 				0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */,
+				094D847229FBEBF4002A0BFF /* MypageModel.swift in Sources */,
 				0969D32B29F24B6200AB4DD2 /* UIButton+.swift in Sources */,
 				0969D31C29F2431700AB4DD2 /* Strings.swift in Sources */,
 				0969D31E29F243E500AB4DD2 /* CustomNavigationView.swift in Sources */,
 				0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */,
 				0969D30D29F23E3400AB4DD2 /* AppDelegate.swift in Sources */,
+				094D844629FBDDD8002A0BFF /* MyPageViewController.swift in Sources */,
 				094D844329FBDD57002A0BFF /* BaseViewController.swift in Sources */,
 				0969D31A29F242D800AB4DD2 /* Layout.swift in Sources */,
 				0969D32229F2446000AB4DD2 /* UIStackView+.swift in Sources */,
