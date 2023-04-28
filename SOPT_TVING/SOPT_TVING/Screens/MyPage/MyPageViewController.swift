@@ -111,15 +111,24 @@ extension MyPageViewController {
             var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
             config.backgroundColor = .clear
             config.showsSeparators = false
-            config.footerMode = .supplementary
+            let section = self.dataSource.snapshot().sectionIdentifiers[sectionIndex]
+            switch section {
+            case .first:
+                config.footerMode = .supplementary
+            default:
+                config.footerMode = .none
+            }
             let layoutSection = NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvirnment)
             
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            layoutSection.decorationItems = [backgroundItem]
             layoutSection.orthogonalScrollingBehavior = .none
-            //  layoutSection.interGroupSpacing = 18
+              layoutSection.interGroupSpacing = 18
             layoutSection.contentInsets = .zero
             
             return layoutSection
         }
+        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
         return layout
     }
 }

@@ -36,7 +36,7 @@ class MypageCollectionViewCell: UICollectionViewCell {
 
 extension MypageCollectionViewCell {
     private func setUI() {
-        backgroundColor = .black
+        backgroundColor = .clear
         
         titleLabel.do {
             $0.textColor = .white
