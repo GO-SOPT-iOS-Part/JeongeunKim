@@ -1,11 +1,11 @@
 //
 //  UIView+.swift
-//  SOPT_32
+//  SOPT_TVING
 //
-//  Created by JEONGEUN KIM on 2023/04/06.
+//  Created by JEONGEUN KIM on 2023/04/21.
 //
 
-import UIKit.UIView
+import UIKit
 
 extension UIView {
     
@@ -13,12 +13,12 @@ extension UIView {
         views.forEach { self.addSubview($0) }
     }
     
-    func makeRounded (radius : CGFloat){
+    func makeCornerRound (radius: CGFloat) {
         layer.cornerRadius = radius
         layer.masksToBounds = false
     }
     
-    func makeBorder(width : CGFloat , color : UIColor ){
+    func makeBorder(width: CGFloat, color: UIColor ) {
         layer.borderWidth = width
         layer.borderColor = color.cgColor
     }
