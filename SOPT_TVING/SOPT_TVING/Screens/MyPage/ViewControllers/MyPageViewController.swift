@@ -13,13 +13,13 @@ import Then
 class MyPageViewController: BaseViewController {
     
     // MARK: - Properties
-    
+    private let profileItem: [ProfileModel] = ProfileModel.item
     private let firstItem: [InfoFirstModel] = InfoFirstModel.items
     private let secondItem: [InfoSecondModel] = InfoSecondModel.items
     private let thirdItem: [InfoThirdModel] = InfoThirdModel.items
     
     enum Sections: Int, Hashable {
-        case first, second, third
+        case profile, first, second, third
     }
     typealias Item = AnyHashable
     
@@ -52,7 +52,6 @@ class MyPageViewController: BaseViewController {
             $0.directionalHorizontalEdges.equalTo(safeArea)
             $0.height.equalTo(46)
         }
-        
         collectionView.snp.makeConstraints {
             $0.top.equalTo(navigationView.snp.bottom)
             $0.directionalHorizontalEdges.equalTo(safeArea)
@@ -65,6 +64,7 @@ class MyPageViewController: BaseViewController {
 
 extension MyPageViewController {
     private func register() {
+        collectionView.register(MyProfileCollectionViewCell.self, forCellWithReuseIdentifier: MyProfileCollectionViewCell.identifier)
         collectionView.register(MypageCollectionViewCell.self, forCellWithReuseIdentifier: MypageCollectionViewCell.identifier)
         collectionView.register(MyPageFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier)
     }
@@ -73,6 +73,10 @@ extension MyPageViewController {
         dataSource = UICollectionViewDiffableDataSource<Sections, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
             switch section {
+            case .profile:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyProfileCollectionViewCell.identifier, for: indexPath) as! MyProfileCollectionViewCell
+                cell.configure(model: item as! ProfileModel )
+                return cell
             case .first:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MypageCollectionViewCell.identifier, for: indexPath) as! MypageCollectionViewCell
                 cell.configureWithIcon(model: item as! InfoFirstModel )
@@ -95,7 +99,8 @@ extension MyPageViewController {
         defer {
             dataSource.apply(snapShot, animatingDifferences: false)
         }
-        snapShot.appendSections([.first, .second, .third])
+        snapShot.appendSections([.profile,.first, .second, .third])
+        snapShot.appendItems(profileItem, toSection: .profile)
         snapShot.appendItems(firstItem, toSection: .first)
         snapShot.appendItems(secondItem, toSection: .second)
         snapShot.appendItems(thirdItem, toSection: .third)
@@ -120,15 +125,19 @@ extension MyPageViewController {
             }
             let layoutSection = NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvirnment)
             
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            layoutSection.decorationItems = [backgroundItem]
+            switch section {
+            case .third:
+                let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: BackgroundSupplementaryView.identifier)
+                layoutSection.decorationItems = [backgroundItem]
+            default:
+                break
+            }
             layoutSection.orthogonalScrollingBehavior = .none
-              layoutSection.interGroupSpacing = 18
-            layoutSection.contentInsets = .zero
-            
+            layoutSection.interGroupSpacing = 0
+            layoutSection.contentInsets = .init(top: 15, leading: 0, bottom: 15, trailing: 0)
             return layoutSection
         }
-        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
+        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: BackgroundSupplementaryView.identifier)
         return layout
     }
 }

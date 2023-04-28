@@ -6,14 +6,21 @@
 //
 
 import UIKit
-
+struct ProfileModel: Hashable {
+    var image: UIImage
+    var name: String
+}
+extension ProfileModel {
+    static let item: [ProfileModel] = [ProfileModel(image: .profile, name: "Doosan")]
+}
 struct InfoFirstModel: Hashable {
     var image: UIImage
     var title: String
+    var subTitle: String
 }
 extension InfoFirstModel {
-    static let items: [InfoFirstModel] = [InfoFirstModel(image: .icVideo, title: "이용권"),
-                                          InfoFirstModel(image: .icCopyRight, title: "1:1문의내역")
+    static let items: [InfoFirstModel] = [InfoFirstModel(image: .icVideo, title: "이용권", subTitle: "사용중인 이용권이 없습니다."),
+                                          InfoFirstModel(image: .icCopyRight, title: "1:1문의내역", subTitle: "0")
                                           
     ]
 }
@@ -40,5 +47,3 @@ extension InfoThirdModel {
                                           InfoThirdModel(title: "티빙 알아보기")
     ]
 }
-
-

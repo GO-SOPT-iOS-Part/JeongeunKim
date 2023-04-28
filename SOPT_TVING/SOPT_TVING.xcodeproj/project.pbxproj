@@ -11,6 +11,7 @@
 		093F529229FC2BB600575864 /* MyPageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529129FC2BB600575864 /* MyPageFooterView.swift */; };
 		093F529429FC30E600575864 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529329FC30E600575864 /* UILabel+.swift */; };
 		093F529629FC418300575864 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529529FC418300575864 /* BackgroundSupplementaryView.swift */; };
+		093F529E29FC4F8500575864 /* MyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */; };
 		094D843F29FBDCE0002A0BFF /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D843E29FBDCE0002A0BFF /* NSObject+.swift */; };
 		094D844129FBDCFD002A0BFF /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844029FBDCFD002A0BFF /* BaseView.swift */; };
 		094D844329FBDD57002A0BFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844229FBDD57002A0BFF /* BaseViewController.swift */; };
@@ -54,6 +55,7 @@
 		093F529129FC2BB600575864 /* MyPageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterView.swift; sourceTree = "<group>"; };
 		093F529329FC30E600575864 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		093F529529FC418300575864 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
+		093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		094D843E29FBDCE0002A0BFF /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		094D844029FBDCFD002A0BFF /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		094D844229FBDD57002A0BFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -123,14 +125,47 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		094D844429FBDDC5002A0BFF /* MyPage */ = {
+		093F529729FC4A4200575864 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				094D847129FBEBF4002A0BFF /* MypageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		093F529829FC4A4A00575864 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				094D844529FBDDD8002A0BFF /* MyPageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		093F529929FC4A5300575864 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				093F529529FC418300575864 /* BackgroundSupplementaryView.swift */,
 				093F529129FC2BB600575864 /* MyPageFooterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		093F529A29FC4A5A00575864 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 				094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */,
-				094D847129FBEBF4002A0BFF /* MypageModel.swift */,
+				093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		094D844429FBDDC5002A0BFF /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				093F529829FC4A4A00575864 /* ViewControllers */,
+				093F529929FC4A5300575864 /* Views */,
+				093F529A29FC4A5A00575864 /* Cell */,
+				093F529729FC4A4200575864 /* Model */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -431,6 +466,7 @@
 			files = (
 				093F529429FC30E600575864 /* UILabel+.swift in Sources */,
 				0969D32429F2447100AB4DD2 /* UIView+.swift in Sources */,
+				093F529E29FC4F8500575864 /* MyProfileCollectionViewCell.swift in Sources */,
 				0969D33129F29C8700AB4DD2 /* Util.swift in Sources */,
 				092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */,
 				094D847429FBEC9A002A0BFF /* MypageCollectionViewCell.swift in Sources */,

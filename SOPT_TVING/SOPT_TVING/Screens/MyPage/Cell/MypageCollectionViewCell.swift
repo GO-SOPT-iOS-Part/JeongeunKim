@@ -19,6 +19,7 @@ class MypageCollectionViewCell: UICollectionViewCell {
     private let horizontalStackView = UIStackView()
     private let iconImage = UIImageView()
     private let titleLabel = UILabel()
+    private let subLabel = UILabel()
     private let arrowImage = UIImageView()
     
     override init(frame: CGRect) {
@@ -42,6 +43,10 @@ extension MypageCollectionViewCell {
             $0.textColor = .white
             $0.font = .Pretendard(.regular, size: 14)
         }
+        subLabel.do {
+            $0.isHidden = true
+            $0.textColor = .tv_gay2
+        }
         
         horizontalStackView.do {
             $0.addArrangedSubviews(iconImage, titleLabel)
@@ -55,14 +60,17 @@ extension MypageCollectionViewCell {
     }
     
     private func setLayout() {
-        contentView.addSubviews(horizontalStackView, arrowImage)
+        contentView.addSubviews(horizontalStackView, subLabel, arrowImage)
         
         iconImage.snp.makeConstraints {
             $0.size.equalTo(23)
         }
-        
+        subLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(23)
+        }
         arrowImage.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 24, height: 24))
+            $0.size.equalTo(18)
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(13)
         }
@@ -75,8 +83,10 @@ extension MypageCollectionViewCell {
     }
     
     func configureWithIcon(model: InfoFirstModel) {
+        subLabel.isHidden = false
         iconImage.image = model.image
         titleLabel.text = model.title
+        subLabel.text = model.subTitle
         
         horizontalStackView.snp.updateConstraints {
             $0.leading.equalToSuperview().offset(8)

@@ -12,7 +12,11 @@ import Then
 
 final class BackgroundSupplementaryView: UICollectionReusableView {
     
-    private let topLineView = UIView()
+    // MARK: - UI Components
+    
+    private let lineView = UIView()
+    
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,17 +29,19 @@ final class BackgroundSupplementaryView: UICollectionReusableView {
     }
 }
 
+// MARK: - Methods
+
 extension BackgroundSupplementaryView: Layout {
     func setUI() {
-        topLineView.do {
+        lineView.do {
             $0.backgroundColor = .tv_gay4
         }
     }
     
     func setLayout() {
-        addSubview(topLineView)
-        
-        topLineView.snp.makeConstraints {
+        addSubview(lineView)
+
+        lineView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.directionalHorizontalEdges.equalToSuperview()
             $0.height.equalTo(1)

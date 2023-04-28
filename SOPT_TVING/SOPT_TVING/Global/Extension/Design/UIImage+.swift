@@ -39,4 +39,10 @@ extension UIImage {
 
     static var btnBefore: UIImage {
         UIImage(named: "Button/before")! }
+    
+    /// MyPage
+    
+    static var profile: UIImage {
+        UIImage(named: "MyPage/profile")!
+    }
 }
