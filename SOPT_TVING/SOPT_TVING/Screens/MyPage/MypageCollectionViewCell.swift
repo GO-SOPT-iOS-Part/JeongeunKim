@@ -46,7 +46,7 @@ extension MypageCollectionViewCell {
         horizontalStackView.do {
             $0.addArrangedSubviews(iconImage, titleLabel)
             $0.axis = .horizontal
-            $0.spacing = 6
+            $0.spacing = 5
         }
         arrowImage.do {
             $0.isHidden = true
@@ -58,7 +58,7 @@ extension MypageCollectionViewCell {
         contentView.addSubviews(horizontalStackView, arrowImage)
         
         iconImage.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 30, height: 30))
+            $0.size.equalTo(23)
         }
         
         arrowImage.snp.makeConstraints {
@@ -75,6 +75,7 @@ extension MypageCollectionViewCell {
     }
     
     func configureWithIcon(model: InfoFirstModel) {
+        iconImage.image = model.image
         titleLabel.text = model.title
         
         horizontalStackView.snp.updateConstraints {
@@ -82,17 +83,17 @@ extension MypageCollectionViewCell {
         }
     }
     
-    func configureWithArrow(model: InfoFirstModel) {
+    func configureWithArrow(model: InfoSecondModel) {
         horizontalStackView.removeArrangedSubview(iconImage)
         iconImage.removeFromSuperview()
         titleLabel.text = model.title
         arrowImage.isHidden = false
     }
     
-//    func configure(model: InfoModelFour) {
-//        horizontalStackView.removeArrangedSubview(iconImage)
-//        iconImage.removeFromSuperview()
-//        titleLabel.text = model.title
-//        arrowImage.isHidden = true
-//    }
+    func configureWithArrow(model: InfoThirdModel) {
+        horizontalStackView.removeArrangedSubview(iconImage)
+        iconImage.removeFromSuperview()
+        titleLabel.text = model.title
+        arrowImage.isHidden = false
+    }
 }

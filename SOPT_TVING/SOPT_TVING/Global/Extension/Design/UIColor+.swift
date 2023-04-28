@@ -18,5 +18,6 @@ extension UIColor {
     static let tv_gay2 = UIColor(named: "tv_gray/2")
     static let tv_gay3 = UIColor(named: "tv_gray/3")
     static let tv_gay4 = UIColor(named: "tv_gray/4")
+    static let tv_gray5 = UIColor(named: "tv_gray/5")
 
 }
