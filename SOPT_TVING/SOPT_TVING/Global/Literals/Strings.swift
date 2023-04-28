@@ -17,5 +17,12 @@ struct I18N {
         static let passwordTextFiedl = "비밀번호"
         static let goMain = "메인으로"
     }
+    
+    struct MyPage {
+        struct FirstSection {
+            static let beforeImage = "이용권을 구매하고 "
+            static let afterImage = "등 인기 TV프로그램과 다양한 영화 콘텐츠를 자유롭게 시청하세요!"
+        }
+    }
 
 }

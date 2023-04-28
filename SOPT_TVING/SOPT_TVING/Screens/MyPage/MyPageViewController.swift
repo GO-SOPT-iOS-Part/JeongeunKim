@@ -66,6 +66,7 @@ class MyPageViewController: BaseViewController {
 extension MyPageViewController {
     private func register() {
         collectionView.register(MypageCollectionViewCell.self, forCellWithReuseIdentifier: MypageCollectionViewCell.identifier)
+        collectionView.register(MyPageFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier)
     }
     
     private func setupDataSource() {
@@ -98,17 +99,23 @@ extension MyPageViewController {
         snapShot.appendItems(firstItem, toSection: .first)
         snapShot.appendItems(secondItem, toSection: .second)
         snapShot.appendItems(thirdItem, toSection: .third)
+        
+        dataSource.supplementaryViewProvider = { (collectionView, _, indexPath) in
+            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier, for: indexPath) as? MyPageFooterView else { return UICollectionReusableView() }
+            return footer
         }
+    }
     
     private func layout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout { _, layoutEnvirnment in
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvirnment in
             var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
             config.backgroundColor = .clear
             config.showsSeparators = false
-            
+            config.footerMode = .supplementary
             let layoutSection = NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvirnment)
+            
             layoutSection.orthogonalScrollingBehavior = .none
-          //  layoutSection.interGroupSpacing = 18
+            //  layoutSection.interGroupSpacing = 18
             layoutSection.contentInsets = .zero
             
             return layoutSection

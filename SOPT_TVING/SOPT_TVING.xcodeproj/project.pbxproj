@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092B47D629F5971600D38FD7 /* SecureImage.swift */; };
+		093F529229FC2BB600575864 /* MyPageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529129FC2BB600575864 /* MyPageFooterView.swift */; };
+		093F529429FC30E600575864 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529329FC30E600575864 /* UILabel+.swift */; };
 		094D843F29FBDCE0002A0BFF /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D843E29FBDCE0002A0BFF /* NSObject+.swift */; };
 		094D844129FBDCFD002A0BFF /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844029FBDCFD002A0BFF /* BaseView.swift */; };
 		094D844329FBDD57002A0BFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844229FBDD57002A0BFF /* BaseViewController.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		092B47D629F5971600D38FD7 /* SecureImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureImage.swift; sourceTree = "<group>"; };
+		093F529129FC2BB600575864 /* MyPageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterView.swift; sourceTree = "<group>"; };
+		093F529329FC30E600575864 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		094D843E29FBDCE0002A0BFF /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		094D844029FBDCFD002A0BFF /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		094D844229FBDD57002A0BFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				094D844529FBDDD8002A0BFF /* MyPageViewController.swift */,
+				093F529129FC2BB600575864 /* MyPageFooterView.swift */,
 				094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */,
 				094D847129FBEBF4002A0BFF /* MypageModel.swift */,
 			);
@@ -150,6 +155,7 @@
 				0969D32329F2447100AB4DD2 /* UIView+.swift */,
 				0969D32A29F24B6200AB4DD2 /* UIButton+.swift */,
 				094D843E29FBDCE0002A0BFF /* NSObject+.swift */,
+				093F529329FC30E600575864 /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093F529429FC30E600575864 /* UILabel+.swift in Sources */,
 				0969D32429F2447100AB4DD2 /* UIView+.swift in Sources */,
 				0969D33129F29C8700AB4DD2 /* Util.swift in Sources */,
 				092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */,
@@ -444,6 +451,7 @@
 				0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */,
 				094D844129FBDCFD002A0BFF /* BaseView.swift in Sources */,
 				0969D32929F2499000AB4DD2 /* LoginType.swift in Sources */,
+				093F529229FC2BB600575864 /* MyPageFooterView.swift in Sources */,
 				0969D30E29F23E3400AB4DD2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

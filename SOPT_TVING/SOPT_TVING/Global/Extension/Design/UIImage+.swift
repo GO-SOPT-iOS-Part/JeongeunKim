@@ -13,6 +13,8 @@ extension UIImage {
     
     static var tvLogo: UIImage {
         UIImage(named: "Logo/logo")! }
+    static var channelLogo: UIImage {
+        UIImage(named: "Logo/ChannelLogo")! }
     
     /// Icon
 
