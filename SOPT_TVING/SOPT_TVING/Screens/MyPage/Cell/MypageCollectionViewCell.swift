@@ -40,12 +40,13 @@ extension MypageCollectionViewCell {
         backgroundColor = .clear
         
         titleLabel.do {
-            $0.textColor = .white
-            $0.font = .Pretendard(.regular, size: 14)
+            $0.textColor = .tv_gay2
+            $0.font = .Pretendard(.medium, size: 15)
         }
         subLabel.do {
             $0.isHidden = true
             $0.textColor = .tv_gay2
+            $0.font = .Pretendard(.medium, size: 13)
         }
         
         horizontalStackView.do {

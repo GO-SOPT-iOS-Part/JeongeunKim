@@ -28,7 +28,7 @@ class MyPageViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let navigationView = CustomNavigationView(icon: .btnBefore)
+    private let navigationView = CustomNavigationView(icon: .btnBefore, btnImage1: .icBell, btnImage2: .icSet)
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
     // MARK: - Life Cycle
@@ -67,6 +67,7 @@ extension MyPageViewController {
         collectionView.register(MyProfileCollectionViewCell.self, forCellWithReuseIdentifier: MyProfileCollectionViewCell.identifier)
         collectionView.register(MypageCollectionViewCell.self, forCellWithReuseIdentifier: MypageCollectionViewCell.identifier)
         collectionView.register(MyPageFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier)
+        collectionView.register(MyPageButtonFooterReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageButtonFooterReusableView.identifier)
     }
     
     private func setupDataSource() {
@@ -99,15 +100,22 @@ extension MyPageViewController {
         defer {
             dataSource.apply(snapShot, animatingDifferences: false)
         }
-        snapShot.appendSections([.profile,.first, .second, .third])
+        snapShot.appendSections([.profile, .first, .second, .third])
         snapShot.appendItems(profileItem, toSection: .profile)
         snapShot.appendItems(firstItem, toSection: .first)
         snapShot.appendItems(secondItem, toSection: .second)
         snapShot.appendItems(thirdItem, toSection: .third)
         
         dataSource.supplementaryViewProvider = { (collectionView, _, indexPath) in
-            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier, for: indexPath) as? MyPageFooterView else { return UICollectionReusableView() }
-            return footer
+            switch indexPath.section {
+            
+            case 1:
+                guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier, for: indexPath) as? MyPageFooterView else { return UICollectionReusableView() }
+                return footer
+            default:
+                guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageButtonFooterReusableView.identifier, for: indexPath) as? MyPageButtonFooterReusableView else { return UICollectionReusableView() }
+                return footer
+            }
         }
     }
     
@@ -118,7 +126,7 @@ extension MyPageViewController {
             config.showsSeparators = false
             let section = self.dataSource.snapshot().sectionIdentifiers[sectionIndex]
             switch section {
-            case .first:
+            case .first, .third:
                 config.footerMode = .supplementary
             default:
                 config.footerMode = .none

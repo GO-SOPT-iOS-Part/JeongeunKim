@@ -37,6 +37,7 @@ extension MyPageFooterView: Layout {
         backgroundColor = .tv_gray5
         title.do {
             $0.numberOfLines = 0
+            $0.font = .Pretendard(.bold, size: 12)
             $0.textColor = .tv_gay2
             $0.attributedText = NSMutableAttributedString()
                 .addImageInBetweenString(firstSentence: I18N.MyPage.FirstSection.beforeImage, image: .channelLogo, lastSentence: I18N.MyPage.FirstSection.afterImage)
@@ -62,6 +63,5 @@ extension MyPageFooterView: Layout {
             $0.trailing.equalToSuperview().inset(50)
             $0.directionalVerticalEdges.equalToSuperview().inset(10)
         }
-        
     }
 }

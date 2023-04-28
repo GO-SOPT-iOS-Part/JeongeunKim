@@ -12,6 +12,7 @@
 		093F529429FC30E600575864 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529329FC30E600575864 /* UILabel+.swift */; };
 		093F529629FC418300575864 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529529FC418300575864 /* BackgroundSupplementaryView.swift */; };
 		093F529E29FC4F8500575864 /* MyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */; };
+		093F52A029FC562300575864 /* MyPageButtonFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529F29FC562300575864 /* MyPageButtonFooterReusableView.swift */; };
 		094D843F29FBDCE0002A0BFF /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D843E29FBDCE0002A0BFF /* NSObject+.swift */; };
 		094D844129FBDCFD002A0BFF /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844029FBDCFD002A0BFF /* BaseView.swift */; };
 		094D844329FBDD57002A0BFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D844229FBDD57002A0BFF /* BaseViewController.swift */; };
@@ -56,6 +57,7 @@
 		093F529329FC30E600575864 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		093F529529FC418300575864 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
 		093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		093F529F29FC562300575864 /* MyPageButtonFooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtonFooterReusableView.swift; sourceTree = "<group>"; };
 		094D843E29FBDCE0002A0BFF /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		094D844029FBDCFD002A0BFF /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		094D844229FBDD57002A0BFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				093F529529FC418300575864 /* BackgroundSupplementaryView.swift */,
 				093F529129FC2BB600575864 /* MyPageFooterView.swift */,
+				093F529F29FC562300575864 /* MyPageButtonFooterReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				0969D2EF29F235EB00AB4DD2 /* UIColor+.swift in Sources */,
 				094D847229FBEBF4002A0BFF /* MypageModel.swift in Sources */,
 				0969D32B29F24B6200AB4DD2 /* UIButton+.swift in Sources */,
+				093F52A029FC562300575864 /* MyPageButtonFooterReusableView.swift in Sources */,
 				0969D31C29F2431700AB4DD2 /* Strings.swift in Sources */,
 				0969D31E29F243E500AB4DD2 /* CustomNavigationView.swift in Sources */,
 				0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */,
