@@ -13,6 +13,7 @@ import Then
 class MyPageViewController: BaseViewController {
     
     // MARK: - Properties
+    
     private let profileItem: [ProfileModel] = ProfileModel.item
     private let firstItem: [InfoFirstModel] = InfoFirstModel.items
     private let secondItem: [InfoSecondModel] = InfoSecondModel.items
@@ -21,9 +22,9 @@ class MyPageViewController: BaseViewController {
     enum Sections: Int, Hashable {
         case profile, first, second, third
     }
-    typealias Item = AnyHashable
     
-    private var dataSource: UICollectionViewDiffableDataSource<Sections, Item>! = nil
+    typealias DataSource = UICollectionViewDiffableDataSource<Sections, AnyHashable>
+    private var dataSource: DataSource?
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     
     // MARK: - UI Components
@@ -64,56 +65,49 @@ class MyPageViewController: BaseViewController {
 
 extension MyPageViewController {
     private func register() {
-        collectionView.register(MyProfileCollectionViewCell.self, forCellWithReuseIdentifier: MyProfileCollectionViewCell.identifier)
-        collectionView.register(MypageCollectionViewCell.self, forCellWithReuseIdentifier: MypageCollectionViewCell.identifier)
-        collectionView.register(MyPageFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier)
-        collectionView.register(MyPageButtonFooterReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageButtonFooterReusableView.identifier)
+        collectionView.registerCells(cells: [MyProfileCollectionViewCell.self, MypageCollectionViewCell.self])
+        collectionView.registerFooters(footers: [MyPageFooterView.self, MyPageButtonFooterReusableView.self])
     }
     
     private func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Sections, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+            var section = self.dataSource?.snapshot().sectionIdentifiers[indexPath.section]
             switch section {
             case .profile:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyProfileCollectionViewCell.identifier, for: indexPath) as! MyProfileCollectionViewCell
+                let cell: MyProfileCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
                 cell.configure(model: item as! ProfileModel )
                 return cell
-            case .first:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MypageCollectionViewCell.identifier, for: indexPath) as! MypageCollectionViewCell
-                cell.configureWithIcon(model: item as! InfoFirstModel )
-                cell.backgroundColor = .tv_gray5
-                return cell
-            case .second:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MypageCollectionViewCell.identifier, for: indexPath) as! MypageCollectionViewCell
-                cell.configureWithArrow(model: item as! InfoSecondModel )
-                return cell
-            case .third:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MypageCollectionViewCell.identifier, for: indexPath) as! MypageCollectionViewCell
-                cell.configureWithArrow(model: item as! InfoThirdModel)
+            case .first, .second, .third, .none:
+                let cell: MypageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+                if section == .first {
+                    cell.configureWithIcon(model: item as! InfoFirstModel)
+                    cell.backgroundColor = .tv_gray5
+                }
+                else if section == .second {
+                    cell.configureWithArrow(model: item as! InfoSecondModel )
+                }
+                else { cell.configureWithArrow(model: item as! InfoThirdModel) }
                 return cell
             }
         })
     }
     
     private func reloadData() {
-        var snapShot = NSDiffableDataSourceSnapshot<Sections, Item>()
+        var snapShot = NSDiffableDataSourceSnapshot<Sections, AnyHashable>()
         defer {
-            dataSource.apply(snapShot, animatingDifferences: false)
+            dataSource?.apply(snapShot, animatingDifferences: false)
         }
         snapShot.appendSections([.profile, .first, .second, .third])
-        snapShot.appendItems(profileItem, toSection: .profile)
-        snapShot.appendItems(firstItem, toSection: .first)
-        snapShot.appendItems(secondItem, toSection: .second)
-        snapShot.appendItems(thirdItem, toSection: .third)
+        [profileItem: .profile, firstItem: .first, secondItem: .second, thirdItem: .third]
+            .forEach { snapShot.appendItems($0.key as! [AnyHashable], toSection: $0.value) }
         
-        dataSource.supplementaryViewProvider = { (collectionView, _, indexPath) in
+        dataSource?.supplementaryViewProvider = { (collectionView, _, indexPath) in
             switch indexPath.section {
-            
             case 1:
-                guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageFooterView.identifier, for: indexPath) as? MyPageFooterView else { return UICollectionReusableView() }
+                let footer: MyPageFooterView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, indexPath: indexPath)
                 return footer
             default:
-                guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MyPageButtonFooterReusableView.identifier, for: indexPath) as? MyPageButtonFooterReusableView else { return UICollectionReusableView() }
+                let footer: MyPageButtonFooterReusableView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, indexPath: indexPath)
                 return footer
             }
         }
@@ -124,7 +118,7 @@ extension MyPageViewController {
             var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
             config.backgroundColor = .clear
             config.showsSeparators = false
-            let section = self.dataSource.snapshot().sectionIdentifiers[sectionIndex]
+            let section = self.dataSource?.snapshot().sectionIdentifiers[sectionIndex]
             switch section {
             case .first, .third:
                 config.footerMode = .supplementary
@@ -145,7 +139,7 @@ extension MyPageViewController {
             layoutSection.contentInsets = .init(top: 15, leading: 0, bottom: 15, trailing: 0)
             return layoutSection
         }
-        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: BackgroundSupplementaryView.identifier)
+        layout.register(BackgroundSupplementaryView.self)
         return layout
     }
 }

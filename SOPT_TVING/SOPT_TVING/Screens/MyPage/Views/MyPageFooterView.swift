@@ -35,6 +35,7 @@ class MyPageFooterView: UICollectionReusableView {
 extension MyPageFooterView: Layout {
     func setUI() {
         backgroundColor = .tv_gray5
+        
         title.do {
             $0.numberOfLines = 0
             $0.font = .Pretendard(.bold, size: 12)
@@ -50,6 +51,7 @@ extension MyPageFooterView: Layout {
     
     func setLayout() {
         addSubviews(title, iconImage)
+        
         makeCornerRound(radius: 3)
         
         iconImage.snp.makeConstraints {

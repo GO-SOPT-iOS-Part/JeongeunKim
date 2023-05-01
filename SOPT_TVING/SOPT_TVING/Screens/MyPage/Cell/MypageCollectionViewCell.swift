@@ -22,6 +22,8 @@ class MypageCollectionViewCell: UICollectionViewCell {
     private let subLabel = UILabel()
     private let arrowImage = UIImageView()
     
+    // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setUI()

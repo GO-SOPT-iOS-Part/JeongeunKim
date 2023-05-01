@@ -20,6 +20,8 @@ class MyProfileCollectionViewCell: UICollectionViewCell {
     private let nameLabel = UILabel()
     private let changeButton = UIButton()
     
+    // MARK: - Initialization
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setUI()
@@ -76,5 +78,4 @@ extension MyProfileCollectionViewCell: Layout {
         profileImage.image = model.image
         nameLabel.text = model.name
     }
-    
 }

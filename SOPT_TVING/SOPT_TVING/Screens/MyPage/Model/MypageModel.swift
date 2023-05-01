@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 struct ProfileModel: Hashable {
     var image: UIImage
     var name: String

@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let navigationView = CustomNavigationView(icon: .btnBefore, btnImage1: nil, btnImage2:  nil)
+    private let navigationView = CustomNavigationView(icon: .btnBefore, btnImage1: nil, btnImage2: nil)
     private let titleLabel = UILabel()
     private let loginButton = UIButton(configuration: .plain())
     private let findAccountView = LoginHorizontalStackView(type: .Find, font: .Pretendard(.semiBold, size: 14))
