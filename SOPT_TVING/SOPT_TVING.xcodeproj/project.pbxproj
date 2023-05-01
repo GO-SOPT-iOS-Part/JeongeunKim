@@ -46,6 +46,7 @@
 		0969D32F29F2993F00AB4DD2 /* LoginConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32E29F2993F00AB4DD2 /* LoginConfirmViewController.swift */; };
 		0969D33129F29C8700AB4DD2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D33029F29C8700AB4DD2 /* Util.swift */; };
 		0969F35B29FF7C37004D1560 /* CollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969F35A29FF7C37004D1560 /* CollectionView+.swift */; };
+		0969F35D29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969F35C29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift */; };
 		0988FC3329E975AB0065906C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3229E975AB0065906C /* LoginViewController.swift */; };
 		0988FC3629E975AB0065906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3429E975AB0065906C /* Main.storyboard */; };
 		0988FC3829E975AB0065906C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3729E975AB0065906C /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		0969D32E29F2993F00AB4DD2 /* LoginConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewController.swift; sourceTree = "<group>"; };
 		0969D33029F29C8700AB4DD2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		0969F35A29FF7C37004D1560 /* CollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+.swift"; sourceTree = "<group>"; };
+		0969F35C29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+.swift"; sourceTree = "<group>"; };
 		0988FC2B29E975AB0065906C /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0988FC3229E975AB0065906C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0988FC3529E975AB0065906C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */,
 				0969F35A29FF7C37004D1560 /* CollectionView+.swift */,
+				0969F35C29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift */,
 				093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */,
 			);
 			path = Cell;
@@ -490,6 +493,7 @@
 				0969D2F129F2362E00AB4DD2 /* UIImage+.swift in Sources */,
 				0969D30D29F23E3400AB4DD2 /* AppDelegate.swift in Sources */,
 				094D844629FBDDD8002A0BFF /* MyPageViewController.swift in Sources */,
+				0969F35D29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift in Sources */,
 				094D844329FBDD57002A0BFF /* BaseViewController.swift in Sources */,
 				0969D31A29F242D800AB4DD2 /* Layout.swift in Sources */,
 				0969D32229F2446000AB4DD2 /* UIStackView+.swift in Sources */,
