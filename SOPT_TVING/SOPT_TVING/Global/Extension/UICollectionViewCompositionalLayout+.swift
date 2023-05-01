@@ -9,7 +9,6 @@ import UIKit
 
 extension UICollectionViewCompositionalLayout {
     func register<T: UICollectionReusableView >(_ class: T.Type) {
-        register( T.self , forDecorationViewOfKind: T.identifier )
+        register( T.self, forDecorationViewOfKind: T.identifier )
     }
 }
-

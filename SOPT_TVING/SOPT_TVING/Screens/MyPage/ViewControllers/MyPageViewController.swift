@@ -43,6 +43,10 @@ class MyPageViewController: BaseViewController {
     
     override func setUI() {
         view.backgroundColor = .black
+        
+        collectionView.do {
+            $0.showsVerticalScrollIndicator = false
+        }
     }
     
     override func setLayout() {
@@ -66,12 +70,12 @@ class MyPageViewController: BaseViewController {
 extension MyPageViewController {
     private func register() {
         collectionView.registerCells(cells: [MyProfileCollectionViewCell.self, MypageCollectionViewCell.self])
-        collectionView.registerFooters(footers: [MyPageFooterView.self, MyPageButtonFooterReusableView.self])
+        collectionView.registerFooters(footers: [MyPageFooterReusableView.self, MyPageButtonFooterReusableView.self])
     }
     
     private func setupDataSource() {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            var section = self.dataSource?.snapshot().sectionIdentifiers[indexPath.section]
+            let section = self.dataSource?.snapshot().sectionIdentifiers[indexPath.section]
             switch section {
             case .profile:
                 let cell: MyProfileCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
@@ -81,11 +85,9 @@ extension MyPageViewController {
                 let cell: MypageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
                 if section == .first {
                     cell.configureWithIcon(model: item as! InfoFirstModel)
-                    cell.backgroundColor = .tv_gray5
-                }
+                    cell.backgroundColor = .tv_gray5 }
                 else if section == .second {
-                    cell.configureWithArrow(model: item as! InfoSecondModel )
-                }
+                    cell.configureWithArrow(model: item as! InfoSecondModel ) }
                 else { cell.configureWithArrow(model: item as! InfoThirdModel) }
                 return cell
             }
@@ -94,9 +96,8 @@ extension MyPageViewController {
     
     private func reloadData() {
         var snapShot = NSDiffableDataSourceSnapshot<Sections, AnyHashable>()
-        defer {
-            dataSource?.apply(snapShot, animatingDifferences: false)
-        }
+        defer { dataSource?.apply(snapShot, animatingDifferences: false) }
+        
         snapShot.appendSections([.profile, .first, .second, .third])
         [profileItem: .profile, firstItem: .first, secondItem: .second, thirdItem: .third]
             .forEach { snapShot.appendItems($0.key as! [AnyHashable], toSection: $0.value) }
@@ -104,10 +105,11 @@ extension MyPageViewController {
         dataSource?.supplementaryViewProvider = { (collectionView, _, indexPath) in
             switch indexPath.section {
             case 1:
-                let footer: MyPageFooterView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, indexPath: indexPath)
+                let footer: MyPageFooterReusableView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, indexPath: indexPath)
                 return footer
             default:
                 let footer: MyPageButtonFooterReusableView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, indexPath: indexPath)
+                footer.frame.size.height = 55
                 return footer
             }
         }
@@ -115,31 +117,17 @@ extension MyPageViewController {
     
     private func layout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvirnment in
-            var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-            config.backgroundColor = .clear
-            config.showsSeparators = false
             let section = self.dataSource?.snapshot().sectionIdentifiers[sectionIndex]
             switch section {
-            case .first, .third:
-                config.footerMode = .supplementary
-            default:
-                config.footerMode = .none
-            }
-            let layoutSection = NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvirnment)
-            
-            switch section {
+            case .first:
+                return ListLayout.Section(ListLayout.listLayout(footer: .supplementary), layoutEnvirnment, contentInsets: nil, line: false)
             case .third:
-                let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: BackgroundSupplementaryView.identifier)
-                layoutSection.decorationItems = [backgroundItem]
+                return  ListLayout.Section( ListLayout.listLayout(footer: .supplementary), layoutEnvirnment, contentInsets: nil, line: true)
             default:
-                break
+                return  ListLayout.Section( ListLayout.listLayout(footer: .none), layoutEnvirnment, contentInsets: nil, line: false)
             }
-            layoutSection.orthogonalScrollingBehavior = .none
-            layoutSection.interGroupSpacing = 0
-            layoutSection.contentInsets = .init(top: 15, leading: 0, bottom: 15, trailing: 0)
-            return layoutSection
         }
-        layout.register(BackgroundSupplementaryView.self)
+        layout.register(LineSupplementaryView.self)
         return layout
     }
 }

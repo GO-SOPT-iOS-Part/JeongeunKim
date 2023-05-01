@@ -1,5 +1,5 @@
 //
-//  BackgroundCollectionReusableView.swift
+//  LineSupplementaryView.swift
 //  SOPT_TVING
 //
 //  Created by JEONGEUN KIM on 2023/04/29.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class BackgroundSupplementaryView: UICollectionReusableView {
+final class LineSupplementaryView: UICollectionReusableView {
     
     // MARK: - UI Components
     
@@ -31,7 +31,7 @@ final class BackgroundSupplementaryView: UICollectionReusableView {
 
 // MARK: - Methods
 
-extension BackgroundSupplementaryView: Layout {
+extension LineSupplementaryView: Layout {
     func setUI() {
         lineView.do {
             $0.backgroundColor = .tv_gay4
