@@ -23,6 +23,12 @@ struct I18N {
             static let beforeImage = "이용권을 구매하고 "
             static let afterImage = "등 인기 TV프로그램과 다양한 영화 콘텐츠를 자유롭게 시청하세요!"
         }
+        struct Logout {
+            static let title = "로그아웃"
+        }
+        struct Profile {
+            static let title = "프로필 전환"
+        }
     }
 
 }

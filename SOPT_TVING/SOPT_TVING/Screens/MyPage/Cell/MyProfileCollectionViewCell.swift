@@ -47,7 +47,7 @@ extension MyProfileCollectionViewCell: Layout {
             $0.font = .Pretendard(.medium, size: 17)
         }
         changeButton.do {
-            $0.setTitle("프로필 전환", for: .normal)
+            $0.setTitle(I18N.MyPage.Profile.title, for: .normal)
             $0.titleLabel?.font = .Pretendard(.medium, size: 10)
             $0.makeCornerRound(radius: 2)
             $0.makeBorder(width: 1, color: .tv_gay4!)

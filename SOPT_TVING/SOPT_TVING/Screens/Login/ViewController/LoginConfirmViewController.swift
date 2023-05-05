@@ -37,7 +37,8 @@ extension LoginConfirmViewController: Layout {
 
     func setUI() {
         view.backgroundColor = .black
-        
+
+ 
         logoImageView.do {
             $0.image = .tvLogo
         }

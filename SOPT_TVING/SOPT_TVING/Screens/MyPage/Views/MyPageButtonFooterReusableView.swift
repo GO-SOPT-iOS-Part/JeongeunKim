@@ -35,7 +35,7 @@ extension MyPageButtonFooterReusableView: Layout {
     func setUI() {
         button.do {
             $0.titleLabel?.font = .Pretendard(.medium, size: 14)
-            $0.setTitle("로그아웃", for: .normal)
+            $0.setTitle(I18N.MyPage.Logout.title, for: .normal)
             $0.makeCornerRound(radius: 2)
             $0.makeBorder(width: 1, color: .tv_gay4!)
         }
