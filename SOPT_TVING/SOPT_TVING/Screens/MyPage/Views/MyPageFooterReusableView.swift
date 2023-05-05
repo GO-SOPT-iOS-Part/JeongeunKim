@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MyPageFooterView: UICollectionReusableView {
+class MyPageFooterReusableView: UICollectionReusableView {
     
     // MARK: - UI Components
     
@@ -32,7 +32,7 @@ class MyPageFooterView: UICollectionReusableView {
 
 // MARK: - Methods
 
-extension MyPageFooterView: Layout {
+extension MyPageFooterReusableView: Layout {
     func setUI() {
         backgroundColor = .tv_gray5
         

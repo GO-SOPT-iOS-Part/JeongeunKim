@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092B47D629F5971600D38FD7 /* SecureImage.swift */; };
-		093F529229FC2BB600575864 /* MyPageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529129FC2BB600575864 /* MyPageFooterView.swift */; };
+		093F529229FC2BB600575864 /* MyPageFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529129FC2BB600575864 /* MyPageFooterReusableView.swift */; };
 		093F529429FC30E600575864 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529329FC30E600575864 /* UILabel+.swift */; };
-		093F529629FC418300575864 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529529FC418300575864 /* BackgroundSupplementaryView.swift */; };
+		093F529629FC418300575864 /* LineSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529529FC418300575864 /* LineSupplementaryView.swift */; };
 		093F529E29FC4F8500575864 /* MyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */; };
 		093F52A029FC562300575864 /* MyPageButtonFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F529F29FC562300575864 /* MyPageButtonFooterReusableView.swift */; };
 		094D843F29FBDCE0002A0BFF /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D843E29FBDCE0002A0BFF /* NSObject+.swift */; };
@@ -45,8 +45,9 @@
 		0969D32D29F2719D00AB4DD2 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32C29F2719D00AB4DD2 /* LoginTextField.swift */; };
 		0969D32F29F2993F00AB4DD2 /* LoginConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D32E29F2993F00AB4DD2 /* LoginConfirmViewController.swift */; };
 		0969D33129F29C8700AB4DD2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D33029F29C8700AB4DD2 /* Util.swift */; };
-		0969F35B29FF7C37004D1560 /* CollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969F35A29FF7C37004D1560 /* CollectionView+.swift */; };
+		0969F35B29FF7C37004D1560 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969F35A29FF7C37004D1560 /* UICollectionView+.swift */; };
 		0969F35D29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969F35C29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift */; };
+		0969F35F29FFDA9D004D1560 /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969F35E29FFDA9D004D1560 /* ListLayout.swift */; };
 		0988FC3329E975AB0065906C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988FC3229E975AB0065906C /* LoginViewController.swift */; };
 		0988FC3629E975AB0065906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3429E975AB0065906C /* Main.storyboard */; };
 		0988FC3829E975AB0065906C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3729E975AB0065906C /* Assets.xcassets */; };
@@ -55,9 +56,9 @@
 
 /* Begin PBXFileReference section */
 		092B47D629F5971600D38FD7 /* SecureImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureImage.swift; sourceTree = "<group>"; };
-		093F529129FC2BB600575864 /* MyPageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterView.swift; sourceTree = "<group>"; };
+		093F529129FC2BB600575864 /* MyPageFooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterReusableView.swift; sourceTree = "<group>"; };
 		093F529329FC30E600575864 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
-		093F529529FC418300575864 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
+		093F529529FC418300575864 /* LineSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSupplementaryView.swift; sourceTree = "<group>"; };
 		093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		093F529F29FC562300575864 /* MyPageButtonFooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageButtonFooterReusableView.swift; sourceTree = "<group>"; };
 		094D843E29FBDCE0002A0BFF /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
@@ -90,8 +91,9 @@
 		0969D32C29F2719D00AB4DD2 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		0969D32E29F2993F00AB4DD2 /* LoginConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewController.swift; sourceTree = "<group>"; };
 		0969D33029F29C8700AB4DD2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		0969F35A29FF7C37004D1560 /* CollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+.swift"; sourceTree = "<group>"; };
+		0969F35A29FF7C37004D1560 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		0969F35C29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+.swift"; sourceTree = "<group>"; };
+		0969F35E29FFDA9D004D1560 /* ListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLayout.swift; sourceTree = "<group>"; };
 		0988FC2B29E975AB0065906C /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0988FC3229E975AB0065906C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0988FC3529E975AB0065906C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				094D844529FBDDD8002A0BFF /* MyPageViewController.swift */,
+				0969F35E29FFDA9D004D1560 /* ListLayout.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,8 +153,8 @@
 		093F529929FC4A5300575864 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				093F529529FC418300575864 /* BackgroundSupplementaryView.swift */,
-				093F529129FC2BB600575864 /* MyPageFooterView.swift */,
+				093F529529FC418300575864 /* LineSupplementaryView.swift */,
+				093F529129FC2BB600575864 /* MyPageFooterReusableView.swift */,
 				093F529F29FC562300575864 /* MyPageButtonFooterReusableView.swift */,
 			);
 			path = Views;
@@ -161,8 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */,
-				0969F35A29FF7C37004D1560 /* CollectionView+.swift */,
-				0969F35C29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift */,
 				093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */,
 			);
 			path = Cell;
@@ -198,6 +199,8 @@
 			children = (
 				0969D31829F240EE00AB4DD2 /* Design */,
 				0969D31F29F2444D00AB4DD2 /* UITextField+.swift */,
+				0969F35C29FFD5A9004D1560 /* UICollectionViewCompositionalLayout+.swift */,
+				0969F35A29FF7C37004D1560 /* UICollectionView+.swift */,
 				0969D32129F2446000AB4DD2 /* UIStackView+.swift */,
 				0969D32329F2447100AB4DD2 /* UIView+.swift */,
 				0969D32A29F24B6200AB4DD2 /* UIButton+.swift */,
@@ -475,7 +478,7 @@
 			files = (
 				093F529429FC30E600575864 /* UILabel+.swift in Sources */,
 				0969D32429F2447100AB4DD2 /* UIView+.swift in Sources */,
-				0969F35B29FF7C37004D1560 /* CollectionView+.swift in Sources */,
+				0969F35B29FF7C37004D1560 /* UICollectionView+.swift in Sources */,
 				093F529E29FC4F8500575864 /* MyProfileCollectionViewCell.swift in Sources */,
 				0969D33129F29C8700AB4DD2 /* Util.swift in Sources */,
 				092B47D729F5971600D38FD7 /* SecureImage.swift in Sources */,
@@ -502,9 +505,10 @@
 				0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */,
 				094D844129FBDCFD002A0BFF /* BaseView.swift in Sources */,
 				0969D32929F2499000AB4DD2 /* LoginType.swift in Sources */,
-				093F529229FC2BB600575864 /* MyPageFooterView.swift in Sources */,
+				093F529229FC2BB600575864 /* MyPageFooterReusableView.swift in Sources */,
 				0969D30E29F23E3400AB4DD2 /* SceneDelegate.swift in Sources */,
-				093F529629FC418300575864 /* BackgroundSupplementaryView.swift in Sources */,
+				0969F35F29FFDA9D004D1560 /* ListLayout.swift in Sources */,
+				093F529629FC418300575864 /* LineSupplementaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -634,7 +638,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -659,7 +663,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -688,7 +692,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

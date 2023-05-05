@@ -45,7 +45,7 @@ extension MyPageButtonFooterReusableView: Layout {
         
         button.snp.makeConstraints {
             $0.height.equalTo(55)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview()
             $0.directionalHorizontalEdges.equalToSuperview().inset(8)
         }
         
