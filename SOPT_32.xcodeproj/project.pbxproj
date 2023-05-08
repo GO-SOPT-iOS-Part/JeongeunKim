@@ -21,6 +21,12 @@
 		0969D35029F3BFA700AB4DD2 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D34F29F3BFA700AB4DD2 /* PhotoCollectionViewCell.swift */; };
 		0969D35229F3C0BB00AB4DD2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D35129F3C0BB00AB4DD2 /* PhotoViewController.swift */; };
 		0969D35429F3C27A00AB4DD2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969D35329F3C27A00AB4DD2 /* Photo.swift */; };
+		09AC525F2A062CBA0035513D /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AC525E2A062CBA0035513D /* FourViewController.swift */; };
+		09B03D2D2A0622A7000BC661 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 09B03D2C2A0622A7000BC661 /* Alamofire */; };
+		09B03D2F2A0622EA000BC661 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B03D2E2A0622EA000BC661 /* NetworkResult.swift */; };
+		09B03D312A0624B3000BC661 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B03D302A0624B3000BC661 /* Config.swift */; };
+		09B03D342A06260F000BC661 /* SignResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B03D332A06260F000BC661 /* SignResponse.swift */; };
+		09B03D362A062619000BC661 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B03D352A062619000BC661 /* SignUpService.swift */; };
 		09CB287029D7F81000237C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB286F29D7F81000237C93 /* AppDelegate.swift */; };
 		09CB287229D7F81000237C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB287129D7F81000237C93 /* SceneDelegate.swift */; };
 		09CB287429D7F81000237C93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB287329D7F81000237C93 /* ViewController.swift */; };
@@ -52,6 +58,11 @@
 		0969D34F29F3BFA700AB4DD2 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		0969D35129F3C0BB00AB4DD2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		0969D35329F3C27A00AB4DD2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		09AC525E2A062CBA0035513D /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
+		09B03D2E2A0622EA000BC661 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		09B03D302A0624B3000BC661 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		09B03D332A06260F000BC661 /* SignResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignResponse.swift; sourceTree = "<group>"; };
+		09B03D352A062619000BC661 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		09CB286C29D7F81000237C93 /* SOPT_32.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_32.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CB286F29D7F81000237C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09CB287129D7F81000237C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B03D2D2A0622A7000BC661 /* Alamofire in Frameworks */,
 				0969D33729F3A7DE00AB4DD2 /* SnapKit in Frameworks */,
 				0969D33A29F3A7E900AB4DD2 /* Then in Frameworks */,
 			);
@@ -100,9 +112,27 @@
 			path = Third_Seminar;
 			sourceTree = "<group>";
 		};
+		09AC52602A062CC70035513D /* Four_Seminar */ = {
+			isa = PBXGroup;
+			children = (
+				09AC525E2A062CBA0035513D /* FourViewController.swift */,
+			);
+			path = Four_Seminar;
+			sourceTree = "<group>";
+		};
+		09B03D322A062555000BC661 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				09B03D332A06260F000BC661 /* SignResponse.swift */,
+				09B03D352A062619000BC661 /* SignUpService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		09CB286329D7F81000237C93 = {
 			isa = PBXGroup;
 			children = (
+				09B03D2E2A0622EA000BC661 /* NetworkResult.swift */,
 				09CB286E29D7F81000237C93 /* SOPT_32 */,
 				09CB286D29D7F81000237C93 /* Products */,
 			);
@@ -123,6 +153,7 @@
 				09CB288429D7FA3500237C93 /* GO_SOPT_SEMINAR */,
 				09DEA30429DEEEA200E14A83 /* GO_SOPT_ASSIGNMENT */,
 				09CB287D29D7F81100237C93 /* Info.plist */,
+				09B03D302A0624B3000BC661 /* Config.swift */,
 			);
 			path = SOPT_32;
 			sourceTree = "<group>";
@@ -139,6 +170,7 @@
 		09CB288429D7FA3500237C93 /* GO_SOPT_SEMINAR */ = {
 			isa = PBXGroup;
 			children = (
+				09AC52602A062CC70035513D /* Four_Seminar */,
 				0969D33229F3A3D100AB4DD2 /* Third_Seminar */,
 				09DEA31429DEF38900E14A83 /* Components */,
 				09CB288529D7FB0900237C93 /* First_Seminar */,
@@ -157,6 +189,7 @@
 		09DEA2F929DE81D900E14A83 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				09B03D322A062555000BC661 /* Network */,
 				09DEA30F29DEF2B600E14A83 /* Extension */,
 				09DEA30129DE831900E14A83 /* Literals */,
 				09DEA2FD29DE820200E14A83 /* Resources */,
@@ -300,6 +333,7 @@
 			packageProductDependencies = (
 				0969D33629F3A7DE00AB4DD2 /* SnapKit */,
 				0969D33929F3A7E900AB4DD2 /* Then */,
+				09B03D2C2A0622A7000BC661 /* Alamofire */,
 			);
 			productName = SOPT_32;
 			productReference = 09CB286C29D7F81000237C93 /* SOPT_32.app */;
@@ -332,6 +366,7 @@
 			packageReferences = (
 				0969D33529F3A7DE00AB4DD2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				0969D33829F3A7E900AB4DD2 /* XCRemoteSwiftPackageReference "Then" */,
+				09B03D2B2A0622A7000BC661 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 09CB286D29D7F81000237C93 /* Products */;
 			projectDirPath = "";
@@ -362,8 +397,11 @@
 			files = (
 				09DEA31829DF0BD800E14A83 /* UIView+.swift in Sources */,
 				09CB287429D7F81000237C93 /* ViewController.swift in Sources */,
+				09AC525F2A062CBA0035513D /* FourViewController.swift in Sources */,
+				09B03D312A0624B3000BC661 /* Config.swift in Sources */,
 				09CB287029D7F81000237C93 /* AppDelegate.swift in Sources */,
 				0969D34429F3B68800AB4DD2 /* CarrotViewController.swift in Sources */,
+				09B03D362A062619000BC661 /* SignUpService.swift in Sources */,
 				0969D34029F3AE3C00AB4DD2 /* BaseView.swift in Sources */,
 				0969D35229F3C0BB00AB4DD2 /* PhotoViewController.swift in Sources */,
 				09CB287229D7F81000237C93 /* SceneDelegate.swift in Sources */,
@@ -376,9 +414,11 @@
 				09CB288729D8073000237C93 /* FirstViewController.swift in Sources */,
 				0969D34229F3B5CE00AB4DD2 /* NSObject.swift in Sources */,
 				09DEA2FF29DE822300E14A83 /* Layout.swift in Sources */,
+				09B03D342A06260F000BC661 /* SignResponse.swift in Sources */,
 				0969D33429F3A7C300AB4DD2 /* CommonView.swift in Sources */,
 				09DEA30329DE832F00E14A83 /* Strings.swift in Sources */,
 				0969D34629F3B70F00AB4DD2 /* Carrot.swift in Sources */,
+				09B03D2F2A0622EA000BC661 /* NetworkResult.swift in Sources */,
 				0969D34829F3B79C00AB4DD2 /* UIImage+.swift in Sources */,
 				09DEA31A29DF0DA800E14A83 /* ViewType.swift in Sources */,
 				0969D33C29F3A8FC00AB4DD2 /* Third_ViewController.swift in Sources */,
@@ -521,6 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.180.123.11 ";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZLLGCJ8XUL;
@@ -548,6 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.180.123.11 ";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZLLGCJ8XUL;
@@ -610,6 +652,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		09B03D2B2A0622A7000BC661 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -622,6 +672,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0969D33829F3A7E900AB4DD2 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		09B03D2C2A0622A7000BC661 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09B03D2B2A0622A7000BC661 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

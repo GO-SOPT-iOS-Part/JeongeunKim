@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import Alamofire
 
 class Third_ViewController: BaseViewController {
     
