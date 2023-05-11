@@ -18,8 +18,10 @@ class LoginConfirmViewController: UIViewController {
     // MARK: - UI Components
     private let userLabel = UILabel()
     private let logoImageView = UIImageView()
-    private let goMainButton = UIButton(configuration: .plain())
-    
+    private lazy var goMainButton = UIButton(configuration: .plain(), primaryAction: UIAction(handler: { (_) in
+        self.navigationController?.pushViewController(MyPageViewController(), animated: true)
+    }))
+
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -32,9 +34,10 @@ class LoginConfirmViewController: UIViewController {
 // MARK: - Methods
 
 extension LoginConfirmViewController: Layout {
+
     func setUI() {
         view.backgroundColor = .black
-        
+ 
         logoImageView.do {
             $0.image = .tvLogo
         }

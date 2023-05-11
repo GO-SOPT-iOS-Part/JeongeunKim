@@ -13,6 +13,8 @@ extension UIImage {
     
     static var tvLogo: UIImage {
         UIImage(named: "Logo/logo")! }
+    static var channelLogo: UIImage {
+        UIImage(named: "Logo/ChannelLogo")! }
     
     /// Icon
 
@@ -22,9 +24,25 @@ extension UIImage {
         UIImage(named: "Icon/eye")! }
     static var icCancel: UIImage {
         UIImage(named: "Icon/cancel")! }
+    static var icRightArrow: UIImage {
+        UIImage(named: "Icon/rightArrow")! }
+    static var icBell: UIImage {
+        UIImage(named: "Icon/bell")! }
+    static var icCopyRight: UIImage {
+        UIImage(named: "Icon/copyright")! }
+    static var icSet: UIImage {
+        UIImage(named: "Icon/set")! }
+    static var icVideo: UIImage {
+        UIImage(named: "Icon/video")! }
     
     /// Button
 
     static var btnBefore: UIImage {
         UIImage(named: "Button/before")! }
+    
+    /// MyPage
+    
+    static var profile: UIImage {
+        UIImage(named: "MyPage/profile")!
+    }
 }
