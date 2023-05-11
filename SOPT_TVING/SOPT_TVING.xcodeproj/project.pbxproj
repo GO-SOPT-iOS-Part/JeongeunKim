@@ -52,6 +52,7 @@
 		0988FC3629E975AB0065906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3429E975AB0065906C /* Main.storyboard */; };
 		0988FC3829E975AB0065906C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3729E975AB0065906C /* Assets.xcassets */; };
 		0988FC3B29E975AB0065906C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0988FC3929E975AB0065906C /* LaunchScreen.storyboard */; };
+		09FDF65B2A0B2E330020D148 /* MyProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDF65A2A0B2E330020D148 /* MyProfileCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		0988FC3729E975AB0065906C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0988FC3A29E975AB0065906C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0988FC3C29E975AB0065906C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09FDF65A2A0B2E330020D148 /* MyProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				094D847329FBEC9A002A0BFF /* MypageCollectionViewCell.swift */,
 				093F529D29FC4F8500575864 /* MyProfileCollectionViewCell.swift */,
+				09FDF65A2A0B2E330020D148 /* MyProfileCollectionReusableView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				0969D32629F2495900AB4DD2 /* LoginHorizontalStackView.swift in Sources */,
 				0969D32F29F2993F00AB4DD2 /* LoginConfirmViewController.swift in Sources */,
 				0969D30629F23BA300AB4DD2 /* UIFont+.swift in Sources */,
+				09FDF65B2A0B2E330020D148 /* MyProfileCollectionReusableView.swift in Sources */,
 				094D844129FBDCFD002A0BFF /* BaseView.swift in Sources */,
 				0969D32929F2499000AB4DD2 /* LoginType.swift in Sources */,
 				093F529229FC2BB600575864 /* MyPageFooterReusableView.swift in Sources */,

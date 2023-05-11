@@ -30,5 +30,4 @@ struct I18N {
             static let title = "프로필 전환"
         }
     }
-
 }

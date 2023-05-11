@@ -71,7 +71,8 @@ extension MyPageViewController {
     private func register() {
         collectionView.registerCells(cells: [MyProfileCollectionViewCell.self, MypageCollectionViewCell.self])
         collectionView.registerFooters(footers: [MyPageFooterReusableView.self, MyPageButtonFooterReusableView.self])
-    }
+        collectionView.register(header: MyProfileCollectionReusableView.self)
+        }
     
     private func setupDataSource() {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
